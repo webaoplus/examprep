@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICSE Examination Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .paper-font { font-family: 'Merriweather', serif; }
+        .answer-hidden { display: none; }
+        .answer-visible { display: block; animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white; }
+            .shadow-xl { box-shadow: none; }
+            .answer-hidden { display: block !important; background: #f0f9ff !important; border-left: 3px solid #0369a1; }
+            .page-break { page-break-after: always; }
+            .metadata-badge { display: none !important; }
+            .question-meta-panel { display: none !important; }
+        }
+        
+        .subject-physics { --subject-color: #3b82f6; --subject-bg: #eff6ff; }
+        .subject-mathematics { --subject-color: #8b5cf6; --subject-bg: #f5f3ff; }
+        .subject-chemistry { --subject-color: #10b981; --subject-bg: #ecfdf5; }
+        .subject-biology { --subject-color: #f59e0b; --subject-bg: #fffbeb; }
+        
+        .subject-header {
+            background: linear-gradient(135deg, var(--subject-color) 0%, var(--subject-color)dd 100%);
+        }
+        
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--subject-color, #3b82f6);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Difficulty colors */
+        .difficulty-easy { background: #dcfce7; color: #166534; border-color: #86efac; }
+        .difficulty-moderate { background: #fef9c3; color: #854d0e; border-color: #fde047; }
+        .difficulty-challenging { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+        
+        /* Importance colors */
+        .importance-high { background: #dbeafe; color: #1e40af; }
+        .importance-very-high { background: #fce7f3; color: #9d174d; }
+        .importance-medium { background: #f3f4f6; color: #374151; }
+
+        /* Math rendering */
+        .math-content { font-family: 'Times New Roman', serif; font-style: italic; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-md no-print">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center font-bold text-xl">📚</div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wide">Examination Portal</h1>
+                    <p class="text-xs text-slate-400">ICSE Board Practice Papers</p>
+                </div>
+            </div>
+            <!-- Connection Status -->
+<div id="connectionStatus" class="fixed bottom-4 right-4 bg-white shadow-lg rounded-lg p-3 border border-slate-200 text-xs no-print transition-opacity opacity-0">
+    <span class="flex items-center gap-2">
+        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+        <span id="statusText">Connected</span>
+    </span>
+</div>
+            <div class="flex gap-3 items-center flex-wrap justify-center">
+                <select id="subjectSelect" class="bg-slate-800 border border-slate-700 text-white text-sm rounded-lg p-2.5 min-w-[140px]">
+                    <option value="">Select Subject...</option>
+                </select>
+
+                <select id="paperSelect" class="bg-slate-800 border border-slate-700 text-white text-sm rounded-lg p-2.5 min-w-[180px]" disabled>
+                    <option value="">Select Paper...</option>
+                </select>
+                
+                <button onclick="toggleAllAnswers()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                    <span id="toggleText">Show Answers</span>
+                </button>
+
+                <button onclick="generatePDF()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                    PDF
+                </button>
+
+                <button onclick="window.print()" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    Print
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="hidden fixed inset-0 bg-black/50 z-40 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-xl shadow-xl flex flex-col items-center gap-3">
+            <div class="loading-spinner"></div>
+            <p class="text-slate-600 font-medium">Loading paper...</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto p-4 md:p-6">
+        <!-- Welcome State -->
+        <div id="welcomeState" class="bg-white rounded-xl shadow-sm border border-slate-200 p-12 text-center">
+            <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">📋</div>
+            <h2 class="text-2xl font-bold text-slate-800 mb-2">Welcome to ICSE Examination Portal</h2>
+            <p class="text-slate-600 mb-6 max-w-md mx-auto">Select a subject and paper from the dropdown above to view practice questions with detailed analytics including difficulty, importance, and historical frequency.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
+                <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <h4 class="font-bold text-blue-800 mb-1">📊 Smart Analytics</h4>
+                    <p class="text-sm text-blue-600">Each question shows importance, difficulty & year-wise frequency</p>
+                </div>
+                <div class="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                    <h4 class="font-bold text-purple-800 mb-1">📄 PDF Export</h4>
+                    <p class="text-sm text-purple-600">Generate PDFs with or without answer keys</p>
+                </div>
+                <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                    <h4 class="font-bold text-green-800 mb-1">🔌 Dynamic Loading</h4>
+                    <p class="text-sm text-green-600">Add new papers by uploading JSON files</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Papers Container -->
+        <div id="papersContainer" class="space-y-6 hidden"></div>
+    </main>
+
+    <footer class="text-center text-slate-400 text-sm py-8 no-print">
+        <p>Dynamic Examination System | Smart Analytics Enabled</p>
+    </footer>
+
+    <script>
+        // ==========================================
+        // CONFIGURATION & STATE
+        // ==========================================
+        
+        const CONFIG = {
+            papersPath: './papers',
+            subjects: []
+        };
+
+        let currentSubject = '';
+        let currentPaper = null;
+        let answersVisible = false;
+
+        // ==========================================
+        // UTILITY FUNCTIONS
+        // ==========================================
+        
+        function parseDifficulty(difficultyStr) {
+            if (!difficultyStr) return null;
+            const lower = difficultyStr.toLowerCase();
+            if (lower.includes('easy')) return { level: 'Easy', class: 'difficulty-easy', icon: '🟢' };
+            if (lower.includes('moderate')) return { level: 'Moderate', class: 'difficulty-moderate', icon: '🟡' };
+            if (lower.includes('challenging')) return { level: 'Challenging', class: 'difficulty-challenging', icon: '🔴' };
+            return null;
+        }
+
+        function parseImportance(importanceStr) {
+            if (!importanceStr) return null;
+            const lower = importanceStr.toLowerCase();
+            if (lower.includes('very high')) return { level: 'Very High', class: 'importance-very-high', icon: '👑' };
+            if (lower.includes('high')) return { level: 'High', class: 'importance-high', icon: '⭐' };
+            if (lower.includes('medium')) return { level: 'Medium', class: 'importance-medium', icon: '🔶' };
+            return null;
+        }
+
+        function renderMetadata(item) {
+            if (!item.weightage && !item.why_important && !item.frequency && !item.difficulty_importance) {
+                return '';
+            }
+
+            const difficulty = parseDifficulty(item.difficulty_importance);
+            const importance = parseImportance(item.difficulty_importance);
+
+            let html = '<div class="question-meta-panel mt-3 p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs no-print">';
+            
+            // Badges row
+            html += '<div class="flex flex-wrap gap-2 mb-2">';
+            if (item.weightage) {
+                html += `<span class="metadata-badge px-2 py-1 bg-indigo-100 text-indigo-700 rounded font-medium">Weightage: ${item.weightage} marks</span>`;
+            }
+            if (difficulty) {
+                html += `<span class="metadata-badge px-2 py-1 rounded font-medium border ${difficulty.class}">${difficulty.icon} ${difficulty.level}</span>`;
+            }
+            if (importance) {
+                html += `<span class="metadata-badge px-2 py-1 rounded font-medium ${importance.class}">${importance.icon} ${importance.level} Importance</span>`;
+            }
+            html += '</div>';
+
+            // Details
+            if (item.why_important) {
+                html += `<p class="text-slate-600 mb-1"><span class="font-semibold text-slate-700">Why Important:</span> ${item.why_important}</p>`;
+            }
+            if (item.frequency) {
+                html += `<p class="text-slate-600"><span class="font-semibold text-slate-700">Frequency:</span> ${item.frequency}</p>`;
+            }
+            html += '</div>';
+
+            return html;
+        }
+
+        // ==========================================
+        // EMBEDDED PAPERS (Physics 1-5 with metadata)
+        // ==========================================
+        
+        const EMBEDDED_PAPERS = {
+            physics: [
+                {
+                    id: "paper1",
+                    title: "Practice Paper 1",
+                    subtitle: "Mechanics (Moments/Work), Electricity, Sound, Light",
+                    generalInstructions: ["Answers to be written on separate paper.", "First 15 minutes for reading.", "Section A compulsory. Attempt any 4 from Section B.", "Marks given in brackets [ ]."],
+                    sectionA: {
+                        totalMarks: 40,
+                        questions: [
+                            { 
+                                num: "1", 
+                                marks: 15, 
+                                type: "mcq", 
+                                instruction: "Choose correct answers.", 
+                                items: [
+                                    { 
+                                        q: "Energy conversion in DC motor:", 
+                                        options: ["Mech to Elec", "Elec to Chem", "Elec to Mech", "Mech to Heat"], 
+                                        ans: "(c) Elec to Mech",
+                                        weightage: 1,
+                                        why_important: "Tests fundamental energy transformation in electrical devices",
+                                        frequency: "Appears in 2018, 2023 Sample, 2025 Specimen",
+                                        difficulty_importance: "Importance: ⭐ (High), Difficulty: 🟢 (Easy)"
+                                    },
+                                    { 
+                                        q: "Girl 40kgf climbs 10m in 4s. Power:", 
+                                        options: ["1600W", "1000W", "1000W", "4000W"], 
+                                        ans: "(c) 1000W",
+                                        weightage: 1,
+                                        why_important: "Standard numerical on Power calculation",
+                                        frequency: "Regular in Section A (2017, 2024)",
+                                        difficulty_importance: "Importance: ⭐ (High), Difficulty: 🟢 (Easy)"
+                                    },
+                                    { 
+                                        q: "Critical angle water-air (μ=4/3):", 
+                                        options: ["41.8°", "48.6°", "48.6°", "49.5°"], 
+                                        ans: "(c) 48.6°",
+                                        weightage: 1,
+                                        why_important: "Tests Snell's law and critical angle concept",
+                                        frequency: "High frequency in Light (2018, School Prelims)",
+                                        difficulty_importance: "Importance: ⭐ (High), Difficulty: 🟡 (Moderate)"
+                                    },
+                                    { 
+                                        q: "Dioptre equivalent to:", 
+                                        options: ["m", "m²", "m⁻²", "m⁻¹"], 
+                                        ans: "(d) m⁻¹",
+                                        weightage: 1,
+                                        why_important: "Fundamental unit of lens power",
+                                        frequency: "Consistent in Light theory questions",
+                                        difficulty_importance: "Importance: ⭐ (High), Difficulty: 🟢 (Easy)"
+                                    },
+                                    { 
+                                        q: "Electric current produces:", 
+                                        options: ["Heat only", "Mag only", "Chem only", "All"], 
+                                        ans: "(d) All",
+                                        weightage: 1,
+                                        why_important: "Core concept of electricity effects",
+                                        frequency: "Regular in Electricity (2017, 2025 Specimen)",
+                                        difficulty_importance: "Importance: 👑 (Very High), Difficulty: 🟢 (Easy)"
+                                    }
+                                ]
+                            },
+                            { 
+                                num: "2", 
+                                marks: 8, 
+                                type: "short", 
+                                parts: [{text: "(i) Metre rule balances at 40cm, 50gf at 10cm. Find weight. [5]"}, {text: "(ii) Work done zero conditions. [3]"}], 
+                                answer: "Weight=150gf. Conditions: Force perpendicular to displacement, or zero displacement.",
+                                weightage: 8,
+                                why_important: "Application of Principle of Moments and Work definition",
+                                frequency: "Very frequent in Mechanics (2017, 2018, School Prelims)",
+                                difficulty_importance: "Importance: ⭐ (High), Difficulty: 🟡 (Moderate)"
+                            },
+                            { 
+                                num: "3", 
+                                marks: 8, 
+                                type: "short", 
+                                parts: [{text: "(i) Forced vs Resonance. [2]"}, {text: "(ii) Lens image 1.5x, object-screen 100cm. Power? [4]"}, {text: "(iii) Microscope image inverted why? [2]"}], 
+                                answer: "Power=+4.17D. Objective forms inverted real image.",
+                                weightage: 8,
+                                why_important: "Tests Sound properties and Lens formula application",
+                                frequency: "Regular in Sound and Light (2018, 2023 Sample)",
+                                difficulty_importance: "Importance: ⭐ (High), Difficulty: 🟡 (Moderate)"
+                            },
+                            { 
+                                num: "4", 
+                                marks: 9, 
+                                type: "short", 
+                                parts: [{text: "(i) Ice in water at 100°C. Final temp? [2]"}, {text: "(ii) 10Ω at 220V. Current and heat in 1min. [5]"}, {text: "(iii) Parallel appliances advantages. [2]"}], 
+                                answer: "I=22A, Heat=290400J. Advantages: Independent operation, same voltage.",
+                                weightage: 9,
+                                why_important: "Heat transfer and Electricity numericals",
+                                frequency: "Compulsory in Section A (2017, 2024)",
+                                difficulty_importance: "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate)"
+                            }
+                        ]
+                    },
+                    sectionB: {
+                        totalMarks: 40,
+                        instruction: "Attempt any four questions.",
+                        questions: [
+                            { 
+                                num: "5", 
+                                focus: "Mechanics - Moments", 
+                                marks: 10, 
+                                parts: [{text: "(a) Plank 30kg, 4m, load 50kgf at 1m from A. Reactions? [4]"}, {text: "(b) Single movable pulley. MA, VR, efficiency <100% why? [4]"}, {text: "(c) Energy transformation falling body. [2]"}], 
+                                answer: "R_A=52.5kgf, R_B=27.5kgf. MA=2, VR=2. Friction causes efficiency loss.",
+                                weightage: 10,
+                                why_important: "High-weightage numerical on Moments and Machines",
+                                frequency: "Compulsory 10-marker in Section B (2017, 2018, School Prelims)",
+                                difficulty_importance: "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging)"
+                            },
+                            { 
+                                num: "6", 
+                                focus: "Electricity", 
+                                marks: 10, 
+                                parts: [{text: "(a) 6Ω||4Ω series 1.5Ω, 12V. R_eq and current. [5]"}, {text: "(b) Cu/Al wires why? Filament property? [3]"}, {text: "(c) Fuse function. [2]"}], 
+                                answer: "R_eq=3.9Ω, I=3.08A. Low resistivity. Tungsten: high melting point.",
+                                weightage: 10,
+                                why_important: "Series-parallel circuits and material properties",
+                                frequency: "Highly frequent (2018, 2025 Specimen)",
+                                difficulty_importance: "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate)"
+                            },
+                            { 
+                                num: "7", 
+                                focus: "Sound", 
+                                marks: 10, 
+                                parts: [{text: "(a) Lower string frequency methods. Law? [3]"}, {text: "(b) Define λ and amplitude. f=50Hz, v=330m/s, find λ. [5]"}, {text: "(c) Ultrasonic applications. [2]"}], 
+                                answer: "λ=6.6m. Applications: SONAR, medical imaging.",
+                                weightage: 10,
+                                why_important: "Sonometer laws and wave properties",
+                                frequency: "Regular 10-marker (School Prelims, 2025 Pattern)",
+                                difficulty_importance: "Importance: ⭐ (High), Difficulty: 🟡 (Moderate)"
+                            },
+                            { 
+                                num: "8", 
+                                focus: "Light", 
+                                marks: 10, 
+                                parts: [{text: "(a) Ray normal to convex lens path. Concave diverges from? [3]"}, {text: "(b) Object 60cm, f=20cm. Image position and characteristic. [4]"}, {text: "(c) Sky blue why? [3]"}], 
+                                answer: "v=30cm, Real inverted diminished. Rayleigh scattering.",
+                                weightage: 10,
+                                why_important: "Lens formula and atmospheric phenomena",
+                                frequency: "Compulsory in Light (2017, 2024)",
+                                difficulty_importance: "Importance: ⭐ (High), Difficulty: 🟡 (Moderate)"
+                            }
+                        ]
+                    }
+                }
+            ]
+        };
+
+        // ==========================================
+        // INITIALIZATION
+        // ==========================================
+        
+// ==========================================
+// ENHANCED INITIALIZATION WITH AUTO-DISCOVERY
+// ==========================================
+
+async function init() {
+    try {
+        // Try to load the auto-generated index first
+        const indexResponse = await fetch('papers-index.json');
+        if (indexResponse.ok) {
+            const index = await indexResponse.json();
+            console.log('📚 Loaded papers index:', index.generatedAt);
+            
+            // Build subjects from index
+            CONFIG.subjects = Object.keys(index.subjects).map(id => ({
+                id: id,
+                name: id.charAt(0).toUpperCase() + id.slice(1),
+                icon: getSubjectIcon(id),
+                color: getSubjectColor(id),
+                papers: index.subjects[id]
+            }));
+        } else {
+            // Fallback to config.json
+            await loadConfigFallback();
+        }
+    } catch (e) {
+        console.log('Using fallback configuration');
+        await loadConfigFallback();
+    }
+    
+    populateSubjectDropdown();
+    setupAutoRefresh();
+}
+
+async function loadConfigFallback() {
+    try {
+        const response = await fetch('config.json');
+        if (response.ok) {
+            const config = await response.json();
+            CONFIG.subjects = config.subjects.map(s => ({
+                ...s,
+                icon: s.icon || getSubjectIcon(s.id),
+                color: s.color || getSubjectColor(s.id)
+            }));
+        }
+    } catch (e) {
+        // Ultimate fallback
+        CONFIG.subjects = [
+            { id: "physics", name: "Physics", icon: "⚛️", color: "blue" },
+            { id: "mathematics", name: "Mathematics", icon: "📐", color: "purple" },
+            { id: "chemistry", name: "Chemistry", icon: "⚗️", color: "green" },
+            { id: "biology", name: "Biology", icon: "🧬", color: "amber" }
+        ];
+    }
+}
+
+function getSubjectIcon(id) {
+    const icons = {
+        physics: "⚛️",
+        mathematics: "📐",
+        chemistry: "⚗️",
+        biology: "🧬",
+        history: "📜",
+        geography: "🌍",
+        english: "📖",
+        computer: "💻"
+    };
+    return icons[id] || "📚";
+}
+
+function getSubjectColor(id) {
+    const colors = {
+        physics: "blue",
+        mathematics: "purple",
+        chemistry: "green",
+        biology: "amber",
+        history: "red",
+        geography: "cyan",
+        english: "pink",
+        computer: "indigo"
+    };
+    return colors[id] || "slate";
+}
+
+// Auto-refresh when papers are updated
+function setupAutoRefresh() {
+    // Check for index updates every 30 seconds (for development)
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        setInterval(async () => {
+            try {
+                const response = await fetch('papers-index.json?t=' + Date.now());
+                if (response.ok) {
+                    const newIndex = await response.json();
+                    const currentTime = CONFIG.lastIndexTime;
+                    if (newIndex.generatedAt !== currentTime) {
+                        console.log('🔄 Papers index updated, reloading...');
+                        location.reload();
+                    }
+                }
+            } catch (e) {
+                // Silent fail
+            }
+        }, 30000);
+    }
+}
+
+        function populateSubjectDropdown() {
+            const select = document.getElementById('subjectSelect');
+            select.innerHTML = '<option value="">Select Subject...</option>';
+            
+            CONFIG.subjects.forEach(sub => {
+                const option = document.createElement('option');
+                option.value = sub.id;
+                option.textContent = `${sub.icon} ${sub.name}`;
+                select.appendChild(option);
+            });
+
+            select.addEventListener('change', (e) => loadSubjectPapers(e.target.value));
+        }
+
+        // ==========================================
+        // LOAD PAPERS
+        // ==========================================
+        
+async function loadSubjectPapers(subjectId) {
+    if (!subjectId) return;
+    
+    currentSubject = subjectId;
+    const paperSelect = document.getElementById('paperSelect');
+    paperSelect.innerHTML = '<option value="">Loading...</option>';
+    paperSelect.disabled = true;
+
+    const papers = [];
+    const subject = CONFIG.subjects.find(s => s.id === subjectId);
+    
+    // Try to use indexed papers first
+    if (subject?.papers) {
+        for (const paperInfo of subject.papers) {
+            try {
+                const response = await fetch(`${CONFIG.papersPath}/${subjectId}/${paperInfo.file}?t=${Date.now()}`);
+                if (response.ok) {
+                    const paper = await response.json();
+                    papers.push(paper);
+                }
+            } catch (e) {
+                console.warn(`Failed to load ${paperInfo.file}:`, e);
+            }
+        }
+    }
+    
+    // Fallback: scan directory
+    if (papers.length === 0) {
+        for (let i = 1; i <= 10; i++) {
+            try {
+                const response = await fetch(`${CONFIG.papersPath}/${subjectId}/paper${i}.json?t=${Date.now()}`);
+                if (response.ok) {
+                    const paper = await response.json();
+                    papers.push(paper);
+                }
+            } catch (e) {
+                break;
+            }
+        }
+    }
+
+    // Final fallback: embedded papers
+    if (papers.length === 0 && EMBEDDED_PAPERS[subjectId]) {
+        papers.push(...EMBEDDED_PAPERS[subjectId]);
+    }
+
+    // Populate dropdown
+    paperSelect.innerHTML = '<option value="">Select Paper...</option>';
+    papers.forEach((paper, idx) => {
+        const option = document.createElement('option');
+        option.value = paper.id || `paper${idx + 1}`;
+        
+        // Enhanced display with metadata
+        const metaInfo = [];
+        if (paper.sectionA?.totalMarks && paper.sectionB?.totalMarks) {
+            metaInfo.push(`${paper.sectionA.totalMarks + paper.sectionB.totalMarks}M`);
+        }
+        if (paper.subtitle) {
+            const shortSub = paper.subtitle.split(',')[0];
+            metaInfo.push(shortSub);
+        }
+        
+        option.textContent = metaInfo.length > 0 
+            ? `${paper.title} — ${metaInfo.join(' | ')}`
+            : paper.title;
+            
+        option.dataset.paper = JSON.stringify(paper);
+        paperSelect.appendChild(option);
+    });
+
+    paperSelect.disabled = false;
+    
+    // Store for comparison
+    paperSelect.onchange = (e) => {
+        const selected = e.target.selectedOptions[0];
+        if (selected?.dataset?.paper) {
+            renderPaper(JSON.parse(selected.dataset.paper));
+        }
+    };
+}
+        // ==========================================
+        // RENDER PAPER
+        // ==========================================
+        
+        function renderPaper(paper) {
+            currentPaper = paper;
+            document.getElementById('welcomeState').classList.add('hidden');
+            document.getElementById('papersContainer').classList.remove('hidden');
+
+            const container = document.getElementById('papersContainer');
+            const subject = CONFIG.subjects.find(s => s.id === currentSubject) || { color: 'blue' };
+            
+            container.className = `space-y-6 subject-${currentSubject}`;
+
+            let html = `
+                <article class="bg-white shadow-xl rounded-lg overflow-hidden border border-slate-200 print:shadow-none">
+                    <header class="subject-header text-white p-6">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                            <div>
+                                <h2 class="text-2xl font-bold paper-font">ICSE Class X ${subject.name}</h2>
+                                <h3 class="text-lg font-semibold mt-1 opacity-90">${paper.title}</h3>
+                                <p class="text-sm mt-1 opacity-75">${paper.subtitle}</p>
+                            </div>
+                            <div class="text-right bg-white/10 p-3 rounded backdrop-blur">
+                                <div class="text-lg font-bold">Maximum Marks: 80</div>
+                                <div class="text-sm opacity-90">Time Allowed: Two Hours</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-white/10 rounded text-sm space-y-1 backdrop-blur">
+                            ${paper.generalInstructions.map(inst => `<p>• ${inst}</p>`).join('')}
+                        </div>
+                    </header>
+
+                    <div class="p-6 md:p-8 paper-font text-slate-800">
+            `;
+
+            html += `
+                <section class="mb-10">
+                    <h4 class="font-bold text-xl mb-6 text-slate-900 border-b-2 border-slate-800 inline-block pr-4">
+                        SECTION A (${paper.sectionA.totalMarks} Marks)
+                        <span class="text-sm font-normal text-slate-600 block mt-1">(Attempt all questions from this Section.)</span>
+                    </h4>
+                    <div class="space-y-8">
+            `;
+
+            paper.sectionA.questions.forEach(q => {
+                html += renderQuestion(q, 'A');
+            });
+
+            html += `</div></section>`;
+
+            html += `
+                <section>
+                    <h4 class="font-bold text-xl mb-6 text-slate-900 border-b-2 border-slate-800 inline-block pr-4">
+                        SECTION B (${paper.sectionB.totalMarks} Marks)
+                        <span class="text-sm font-normal text-slate-600 block mt-1">(${paper.sectionB.instruction})</span>
+                    </h4>
+                    <div class="space-y-8">
+            `;
+
+            paper.sectionB.questions.forEach(q => {
+                html += renderQuestion(q, 'B');
+            });
+
+            html += `</div></section></div></article>`;
+            container.innerHTML = html;
+            
+            answersVisible = false;
+            document.getElementById('toggleText').innerText = "Show Answers";
+        }
+
+        function renderQuestion(q, section) {
+            let html = `<div class="question-block">`;
+            
+            html += `
+                <div class="flex items-baseline gap-3 mb-3">
+                    <span class="font-bold text-lg text-slate-900">Question ${q.num}</span>
+                    ${q.focus ? `<span class="text-xs font-semibold bg-slate-100 text-slate-700 px-2 py-1 rounded">${q.focus}</span>` : ''}
+                    <span class="text-slate-500 text-sm">[${q.marks} Marks]</span>
+                </div>
+            `;
+
+            if (q.type === 'mcq') {
+                html += `<p class="text-sm italic mb-3 text-slate-600">${q.instruction}</p><div class="space-y-3 ml-4">`;
+                
+                q.items.forEach((item, i) => {
+                    const letter = String.fromCharCode(105 + i);
+                    html += `
+                        <div class="pl-4 border-l-2 border-slate-200">
+                            <p class="font-medium mb-2 math-content">(${letter}) ${item.q}</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 ml-4 text-sm text-slate-700">
+                                ${item.options.map((opt, j) => `
+                                    <div class="flex items-center gap-2 math-content">
+                                        <span class="font-serif">(${String.fromCharCode(97 + j)})</span>
+                                        <span>${opt}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            ${item.calc ? `<div class="mt-2 text-xs text-slate-500 italic math-content">Calculation: ${item.calc}</div>` : ''}
+                            <div class="answer-block answer-hidden mt-2 bg-indigo-50 p-2 rounded text-sm border-l-4 border-indigo-400">
+                                <span class="font-bold text-indigo-800">Answer:</span> <span class="text-indigo-900 font-medium math-content">${item.ans}</span>
+                            </div>
+                            ${renderMetadata(item)}
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            } else {
+                html += `<div class="space-y-4 ml-4">`;
+                q.parts.forEach((part, i) => {
+                    html += `<div class="pl-4 border-l-2 border-slate-200">`;
+                    if (part.text) {
+                        html += `<p class="font-medium math-content">${part.text}</p>`;
+                    }
+                    if (part.sub) {
+                        html += `<div class="ml-4 mt-2 space-y-1 text-sm text-slate-700 math-content">`;
+                        part.sub.forEach(sub => html += `<p>${sub}</p>`);
+                        html += `</div>`;
+                    }
+                    // Render metadata for sub-parts if present
+                    if (part.weightage || part.why_important) {
+                        html += renderMetadata(part);
+                    }
+                    html += `</div>`;
+                });
+                
+                if (q.answer) {
+                    html += `
+                        <div class="answer-block answer-hidden mt-3 bg-indigo-50 p-3 rounded text-sm border-l-4 border-indigo-400">
+                            <span class="font-bold text-indigo-800">Answer Key:</span>
+                            <p class="text-indigo-900 mt-1 math-content">${q.answer}</p>
+                        </div>
+                    `;
+                }
+                // Render metadata for main question
+                html += renderMetadata(q);
+                html += `</div>`;
+            }
+
+            html += `</div>`;
+            return html;
+        }
+
+        // ==========================================
+        // CONTROLS
+        // ==========================================
+        
+        function toggleAllAnswers() {
+            answersVisible = !answersVisible;
+            const blocks = document.querySelectorAll('.answer-block');
+            const btnText = document.getElementById('toggleText');
+            
+            blocks.forEach(block => {
+                if (answersVisible) {
+                    block.classList.remove('answer-hidden');
+                    block.classList.add('answer-visible');
+                } else {
+                    block.classList.add('answer-hidden');
+                    block.classList.remove('answer-visible');
+                }
+            });
+            btnText.innerText = answersVisible ? "Hide Answers" : "Show Answers";
+        }
+
+        // ==========================================
+        // PDF GENERATION
+        // ==========================================
+        
+        async function generatePDF() {
+            if (!currentPaper) {
+                alert('Please select a paper first!');
+                return;
+            }
+
+            document.getElementById('loadingState').classList.remove('hidden');
+
+            try {
+                const { PDFDocument, StandardFonts, rgb } = PDFLib;
+                const pdfDoc = await PDFDocument.create();
+                const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+                const boldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+                
+                let page = pdfDoc.addPage([595.28, 841.89]);
+                const { width, height } = page.getSize();
+                let y = height - 50;
+
+                page.drawText(`ICSE Class X - ${currentPaper.title}`, {
+                    x: 50, y, size: 18, font: boldFont, color: rgb(0, 0, 0)
+                });
+                y -= 25;
+                page.drawText(currentPaper.subtitle, {
+                    x: 50, y, size: 12, font: font, color: rgb(0.4, 0.4, 0.4)
+                });
+                y -= 40;
+
+                function addText(text, size, isBold, indent = 0) {
+                    const useFont = isBold ? boldFont : font;
+                    const maxWidth = width - 100 - indent;
+                    // Strip HTML-like tags for PDF
+                    const cleanText = text.replace(/<[^>]*>/g, '');
+                    const words = cleanText.split(' ');
+                    let line = '';
+                    
+                    for (const word of words) {
+                        const testLine = line + word + ' ';
+                        const testWidth = useFont.widthOfTextAtSize(testLine, size);
+                        
+                        if (testWidth > maxWidth && line !== '') {
+                            page.drawText(line, { x: 50 + indent, y, size, font: useFont });
+                            y -= size + 2;
+                            line = word + ' ';
+                            
+                            if (y < 50) {
+                                page = pdfDoc.addPage([595.28, 841.89]);
+                                y = height - 50;
+                            }
+                        } else {
+                            line = testLine;
+                        }
+                    }
+                    page.drawText(line, { x: 50 + indent, y, size, font: useFont });
+                    y -= size + 4;
+                }
+
+                addText(`SECTION A (${currentPaper.sectionA.totalMarks} Marks)`, 14, true);
+                addText('(Attempt all questions from this Section.)', 10, false);
+                y -= 10;
+
+                currentPaper.sectionA.questions.forEach(q => {
+                    addText(`Question ${q.num} [${q.marks} Marks]`, 12, true);
+                    
+                    if (q.type === 'mcq') {
+                        q.items.forEach((item, i) => {
+                            const letter = String.fromCharCode(105 + i);
+                            addText(`(${letter}) ${item.q}`, 10, false, 10);
+                            item.options.forEach((opt, j) => {
+                                addText(`(${String.fromCharCode(97 + j)}) ${opt}`, 9, false, 20);
+                            });
+                            if (answersVisible) {
+                                addText(`Answer: ${item.ans}`, 9, true, 20);
+                            }
+                            y -= 5;
+                        });
+                    } else {
+                        q.parts.forEach((part, i) => {
+                            addText(part.text, 10, false, 10);
+                            if (part.sub) {
+                                part.sub.forEach(sub => addText(sub, 9, false, 20));
+                            }
+                        });
+                        if (answersVisible && q.answer) {
+                            addText(`Answer: ${q.answer}`, 9, true, 10);
+                        }
+                    }
+                    y -= 10;
+                });
+
+                if (y < 100) {
+                    page = pdfDoc.addPage([595.28, 841.89]);
+                    y = height - 50;
+                }
+                
+                addText(`SECTION B (${currentPaper.sectionB.totalMarks} Marks)`, 14, true);
+                addText(`(${currentPaper.sectionB.instruction})`, 10, false);
+                y -= 10;
+
+                currentPaper.sectionB.questions.forEach(q => {
+                    if (y < 150) {
+                        page = pdfDoc.addPage([595.28, 841.89]);
+                        y = height - 50;
+                    }
+                    
+                    addText(`Question ${q.num} - ${q.focus} [${q.marks} Marks]`, 12, true);
+                    q.parts.forEach((part, i) => {
+                        const letter = String.fromCharCode(97 + i);
+                        const markMatch = part.text.match(/\[\d+\]/);
+                        const cleanText = part.text.replace(/\s*\[\d+\]\s*$/, '');
+                        addText(`${letter}) ${cleanText} ${markMatch || ''}`, 10, false, 10);
+                        
+                        if (part.sub) {
+                            part.sub.forEach(sub => {
+                                const subMarkMatch = sub.match(/\[\d+\]/);
+                                const cleanSub = sub.replace(/\s*\[\d+\]\s*$/, '');
+                                addText(`${cleanSub} ${subMarkMatch || ''}`, 9, false, 20);
+                            });
+                        }
+                    });
+                    
+                    if (answersVisible && q.answer) {
+                        addText(`Answer: ${q.answer}`, 9, true, 10);
+                    }
+                    y -= 15;
+                });
+
+                const pdfBytes = await pdfDoc.save();
+                download(pdfBytes, `${currentPaper.id}_${currentSubject}.pdf`, "application/pdf");
+                
+            } catch (e) {
+                console.error('PDF generation failed:', e);
+                alert('PDF generation failed. Falling back to print dialog.');
+                window.print();
+            } finally {
+                document.getElementById('loadingState').classList.add('hidden');
+            }
+        }
+
+        init();
+    </script>
+</body>
+</html>

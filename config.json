@@ -1,0 +1,28 @@
+{
+  "subjects": [
+    {
+      "id": "physics",
+      "name": "Physics",
+      "icon": "⚛️",
+      "color": "blue"
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "icon": "📐",
+      "color": "purple"
+    },
+    {
+      "id": "chemistry",
+      "name": "Chemistry",
+      "icon": "⚗️",
+      "color": "green"
+    },
+    {
+      "id": "biology",
+      "name": "Biology",
+      "icon": "🧬",
+      "color": "amber"
+    }
+  ]
+}

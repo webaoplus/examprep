@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-03-03T17:28:30.750Z",
+  "generatedAt": "2026-03-03T17:37:43.871Z",
   "subjects": {
     "physics": [
       {
-        "id": "paper6",
+        "id": "paper1",
         "file": "paper1.json",
-        "title": "ICSE Class X Physics Practice Paper 6",
+        "title": "ICSE Class X Physics Practice Paper 1",
         "subtitle": "Mechanics (W.E.P./Energy), Electricity (DC Motor/Mag), Sound (Factors/Sonometer), Light (Dispersion)",
         "totalMarks": 40,
         "questionCount": 4

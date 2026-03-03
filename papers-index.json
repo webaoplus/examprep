@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-03-03T17:28:30.750Z",
+  "subjects": {
+    "physics": [
+      {
+        "id": "paper6",
+        "file": "paper1.json",
+        "title": "ICSE Class X Physics Practice Paper 6",
+        "subtitle": "Mechanics (W.E.P./Energy), Electricity (DC Motor/Mag), Sound (Factors/Sonometer), Light (Dispersion)",
+        "totalMarks": 40,
+        "questionCount": 4
+      },
+      {
+        "id": "paper1",
+        "file": "paper2.json",
+        "title": "ICSE Class X Physics Practice Paper 1",
+        "subtitle": "Mechanics (Moments/Work), Electricity (Circuits/Safety), Sound (Echo/Pitch), Light (Refraction/TIR)",
+        "totalMarks": 80,
+        "questionCount": 11
+      }
+    ]
+  }
+}

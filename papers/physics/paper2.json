@@ -332,239 +332,240 @@
           }
         ]
       }
-    ],
-    "sectionB": {
-      "totalMarks": 40,
-      "instruction": "Attempt any four questions from this Section.",
-      "questions": [
-        {
-          "num": "5",
-          "focus": "Mechanics (Moments/Work)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "A uniform plank of mass $40 \\text{ kg}$ is $4 \\text{ m}$ long. It is supported at two points $\\text{A}$ and $\\text{B}$, which are at the two ends. A load of $60 \\text{ kgf}$ is placed at $1 \\text{ m}$ from end $\\text{A}$.",
-              "sub": [
-                "Calculate the reaction force at $\\text{B}$. [3]",
-                "Calculate the reaction force at $\\text{A}$. [3]"
-              ],
-              "ans": "1. $35 \\text{ kgf}$. 2. $65 \\text{ kgf}$.",
-              "details": "Plank Weight $W_P = 40 \\text{ kgf}$ acts at $2 \\text{ m}$ from $\\text{A}$. Load $L = 60 \\text{ kgf}$ acts at $1 \\text{ m}$ from $\\text{A}$. \\n1. Taking moments about $\\text{A}$: $\\text{Clockwise Moment} = W_P \\times 2 + L \\times 1 = 40 \\times 2 + 60 \\times 1 = 140 \\text{ kgf} \\cdot \\text{m}$. $\\text{Anti-Clockwise Moment} = R_B \\times 4$. $4 R_B = 140 \\implies R_B = 35 \\text{ kgf}$.\\n2. $\\text{Total Downward Force} = 40 + 60 = 100 \\text{ kgf}$. $\\text{Total Upward Force} = R_A + R_B$. $R_A + 35 = 100 \\implies R_A = 65 \\text{ kgf}$.",
-              "weightage": 6,
-              "why_important": "High-weightage application numerical on the Principle of Moments and non-uniform loading (Statics).",
-              "frequency": "Compulsory numerical in Section B (2017, School Prelims)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Application)"
-            },
-            {
-              "text": "A boy climbs a flight of stairs $10 \\text{ m}$ high in $20 \\text{ seconds}$. His power is $400 \\text{ W}$. Calculate the mass of the boy. $(g = 10 \\text{ N/kg})$ [4]",
-              "ans": "$80 \\text{ kg}$",
-              "details": "Power $P = \\frac{\\text{Work}}{\\text{Time}} = \\frac{m g h}{t}$. $m = \\frac{P \\cdot t}{g \\cdot h} = \\frac{400 \\text{ W} \\times 20 \\text{ s}}{10 \\text{ N/kg} \\times 10 \\text{ m}} = \\frac{8000}{100} = 80 \\text{ kg}$.",
-              "weightage": 4,
-              "why_important": "Application numerical on Power in W.E.P. (often Q1 but can be extended).",
-              "frequency": "Standard numerical in W.E.P. (School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Calculation)"
-            }
-          ]
-        },
-        {
-          "num": "6",
-          "focus": "Electricity (Circuits/Safety)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "Three resistors, $4 \\text{ \\Omega}$, $6 \\text{ \\Omega}$, and $12 \\text{ \\Omega}$, are connected in parallel to a $12 \\text{ V}$ battery.",
-              "sub": [
-                "Calculate the equivalent resistance of the circuit. [2]",
-                "Calculate the total current drawn from the battery. [2]",
-                "Calculate the current flowing through the $6 \\text{ \\Omega}$ resistor. [2]"
-              ],
-              "ans": "1. $2 \\text{ \\Omega}$. 2. $6 \\text{ A}$. 3. $2 \\text{ A}$.",
-              "details": "1. $\\frac{1}{R_p} = \\frac{1}{4} + \\frac{1}{6} + \\frac{1}{12} = \\frac{3+2+1}{12} = \\frac{6}{12} = \\frac{1}{2}$. $R_p = 2 \\text{ \\Omega}$.\\n2. $I_{\\text{total}} = V/R_p = 12 \\text{ V} / 2 \\text{ \\Omega} = 6 \\text{ A}$.\\n3. $\\text{Current in } 6 \\text{ \\Omega}$ resistor: $I_2 = V/R_2 = 12 \\text{ V} / 6 \\text{ \\Omega} = 2 \\text{ A}$.",
-              "weightage": 6,
-              "why_important": "Compulsory complex numerical on Parallel/Series circuits (a high-weightage format).",
-              "frequency": "Highly frequent and high-weightage numerical (2018, 2025 Specimen)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Calculation)"
-            },
-            {
-              "text": "State the use of a two-way switch in house wiring. Give two advantages of the ring system of wiring. [4]",
-              "ans": "Use: To control a single electrical device (usually a light) from two different positions (e.g., in a staircase, commonly known as staircase wiring). Advantages: 1. Allows smaller diameter wires to be used (lower current in each wire). 2. Enables appliances to continue working from the other side of the ring if a fault occurs.",
-              "details": "Checks knowledge of practical wiring components and system advantages.",
-              "weightage": 4,
-              "why_important": "Core theory on House Wiring and Safety.",
-              "frequency": "Frequent theory question (School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Theory)"
-            }
-          ]
-        },
-        {
-          "num": "7",
-          "focus": "Sound (Echo/Pitch)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "A person standing $49.5 \\text{ m}$ away from a wall claps and hears the echo $0.3 \\text{ s}$ later.",
-              "sub": [
-                "Calculate the speed of sound in air. [2]",
-                "If the air temperature changes and the speed of sound increases to $340 \\text{ m/s}$, calculate the new time interval for the echo. [2]"
-              ],
-              "ans": "1. $330 \\text{ m/s}$. 2. $0.29 \\text{ s}$.",
-              "details": "1. $\\text{Speed } v = \\frac{2d}{t} = \\frac{2 \\times 49.5 \\text{ m}}{0.3 \\text{ s}} = 330 \\text{ m/s}$.\\n2. $\\text{New Time } t' = \\frac{2d}{v'} = \\frac{2 \\times 49.5 \\text{ m}}{340 \\text{ m/s}} = \\frac{99}{340} \\approx 0.291 \\text{ s}$.",
-              "weightage": 4,
-              "why_important": "Numerical application of the Echo principle (Sound).",
-              "frequency": "Highly frequent numerical on Echo (2018, School Prelims)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Calculation)"
-            },
-            {
-              "text": "Distinguish between **pitch** and **loudness** of sound based on the **objective** properties of the wave. [4]",
-              "ans": "Pitch: The subjective property that depends on the **frequency** (Objective) of the wave. Loudness: The subjective property that depends on the **amplitude** (Objective) of the wave.",
-              "details": "Checks the objective-subjective relationship of sound properties.",
-              "weightage": 4,
-              "why_important": "Core theory on Sound properties (essential distinction).",
-              "frequency": "Very frequent theory question (2018, 2025 Specimen)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Concept)"
-            },
-            {
-              "text": "A glass tumbler suddenly cracks when a singer hits a high note. Name and define the phenomenon. [2]",
-              "ans": "Phenomenon: **Resonance**. Definition: The special case of forced vibration where the frequency of the applied external force (singer's note) is exactly equal to the natural frequency of the body (glass tumbler), leading to vibrations of maximum amplitude, causing the crack.",
-              "details": "Tests the application of Resonance in a real-life example.",
-              "weightage": 2,
-              "why_important": "Application-based theory on Resonance.",
-              "frequency": "Standard application question (School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Application)"
-            }
-          ]
-        },
-        {
-          "num": "8",
-          "focus": "Light (Refraction/TIR)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "Define the **angle of deviation** for a prism. State two ways to reduce the angle of deviation produced by a prism. [3]",
-              "ans": "Deviation: The angle between the direction of the incident ray and the direction of the emergent ray (for a prism). Ways to Reduce: 1. Decrease the angle of the prism ($A$). 2. Choose a material with a lower refractive index ($\\mu$). 3. Decrease the angle of incidence ($i$) towards the minimum deviation position.",
-              "details": "Checks definition and factors affecting deviation.",
-              "weightage": 3,
-              "why_important": "Core theory on Prism (Light).",
-              "frequency": "Consistent factors/definition question (School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Fact)"
-            },
-            {
-              "text": "The speed of light in a liquid is $2.0 \\times 10^8 \\text{ m/s}$. The speed of light in a vacuum is $3.0 \\times 10^8 \\text{ m/s}$. Calculate: 1. The refractive index of the liquid. [2] 2. The critical angle for the liquid-air boundary. [3]",
-              "ans": "1. 1.5. 2. $\\approx 41.8^{\\circ}$.",
-              "details": "1. $\\mu = c/v_{\\text{liquid}} = (3.0 \\times 10^8) / (2.0 \\times 10^8) = 1.5$. 2. $\\sin C = 1/\\mu = 1/1.5 = 0.666$. $C = \\sin^{-1}(0.666) \\approx 41.8^{\\circ}$.",
-              "weightage": 5,
-              "why_important": "Numerical application of $\\mu$ definition and TIR concept.",
-              "frequency": "Standard numerical chain (School Prelims, 2023 Sample)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Calculation)"
-            },
-            {
-              "text": "Give one reason why a thin convex lens is preferred over a thick convex lens of the same focal length. [2]",
-              "ans": "A thin lens has less spherical and chromatic aberration (defects) compared to a thick lens, making the image sharper and clearer.",
-              "details": "Checks knowledge of lens imperfections (Light).",
-              "weightage": 2,
-              "why_important": "Reasoning question on lens defects.",
-              "frequency": "Common reasoning question (School Prelims)",
-              "difficulty_importance": "Importance: 🔶 (Medium), Difficulty: 🟡 (Moderate/Reasoning)"
-            }
-          ]
-        },
-        {
-          "num": "9",
-          "focus": "Heat (Calorimetry)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "$10 \\text{ g}$ of steam at $100^{\\circ}\\text{C}$ is passed into $100 \\text{ g}$ of water at $20^{\\circ}\\text{C}$. Find the final temperature of the mixture.",
-              "sub": [
-                "Calculate the maximum heat that can be released by the steam if it condenses and cools to the final temperature $T$. [4]",
-                "Calculate the final temperature of the mixture $T$. [3]"
-              ],
-              "ans": "Final Temperature $\\mathbf{100^{\\circ}\\text{C}}$ (with some steam remaining).",
-              "details": "1. $\\text{Heat Gained to reach } 100^{\\circ}\\text{C}$ by water: $Q_{\\text{gain}} = m_w c_w \\Delta T = 100 \\times 4.2 \\times (100 - 20) = 33600 \\text{ J}$. $\\text{Heat Lost by } 10 \\text{ g}$ steam to condense: $Q_{\\text{steam condenses}} = m_{\\text{steam}} L_{\\text{vap}} = 10 \\times 2268 = 22680 \\text{ J}$. Since $Q_{\\text{gain}} (33600 \\text{ J}) > Q_{\\text{steam condenses}} (22680 \\text{ J})$, the steam will condense completely, and the final temperature will be $\\mathbf{100^{\\circ}\\text{C}}$ with some steam remaining to reach equilibrium.",
-              "weightage": 7,
-              "why_important": "Challenging numerical on Steam Calorimetry, checking phase change calculations.",
-              "frequency": "Highly frequent and high-weightage numerical (2018, School Prelims)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Application)"
-            },
-            {
-              "text": "Explain why food cooks faster in a pressure cooker. [3]",
-              "ans": "In a pressure cooker, the pressure above the water increases due to the sealed container. This increased pressure **raises the boiling point of water** above $100^{\\circ}\\text{C}$. The food is thus cooked at a higher temperature, which accelerates the cooking process.",
-              "details": "Checks the application of the effect of pressure on boiling point.",
-              "weightage": 3,
-              "why_important": "Standard reasoning question in Calorimetry.",
-              "frequency": "Regularly appears as a 'Give Reason' question (School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Reasoning)"
-            }
-          ]
-        },
-        {
-          "num": "10",
-          "focus": "Modern Physics (Radioactivity)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "An element ${}\*{Z}^{A}\\text{X}$ undergoes a decay process to form an element ${}\*{82}^{206}\\text{Pb}$ by the emission of two alpha particles and one beta particle. Determine the atomic number $(Z)$ and mass number $(A)$ of the element $\\text{X}$. [4]",
-              "ans": "$Z=83$, $A=214$.",
-              "details": "Mass Number $A$: $A = 206 + (2 \\times 4) + (1 \\times 0) = 206 + 8 = 214$. Atomic Number $Z$: $Z = 82 + (2 \\times 2) + (1 \\times (-1)) = 82 + 4 - 1 = 85$. **Correction based on common error/simplified calculation:** $Z=82 + 4 - 1 = 85$. **Actual Answer $Z=85, A=214$**. (The previous prompt example had $83/214$. I will stick to the correct derivation: $Z=85, A=214$)",
-              "weightage": 4,
-              "why_important": "Challenging numerical on balancing nuclear equations (Modern Physics).",
-              "frequency": "Highly frequent and high-weightage numerical (2018, School Prelims)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Application)"
-            },
-            {
-              "text": "State three properties that are common to all electromagnetic waves. [3]",
-              "ans": "1. All are transverse waves. 2. All travel at the speed of light ($3 \\times 10^8 \\text{ m/s}$) in a vacuum. 3. All are uncharged and hence are not deflected by electric or magnetic fields. 4. All carry energy and momentum.",
-              "details": "Checks the fundamental properties of EM Waves.",
-              "weightage": 3,
-              "why_important": "Core theory on EM Spectrum.",
-              "frequency": "Consistent theory question (2025 Specimen)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Fact)"
-            },
-            {
-              "text": "Give one major difference between nuclear fission and nuclear fusion. [3]",
-              "ans": "Fission: A heavy nucleus (e.g., Uranium) splits into two smaller nuclei. Fusion: Two light nuclei (e.g., Hydrogen isotopes) combine to form a heavier nucleus.",
-              "details": "Checks the distinction between the two processes.",
-              "weightage": 3,
-              "why_important": "Core distinction between the two nuclear processes.",
-              "frequency": "Standard comparison question (2018, School Prelims)",
-              "difficulty_importance": "Importance: 🔶 (Medium), Difficulty: 🟡 (Moderate/Concept)"
-            }
-          ]
-        },
-        {
-          "num": "11",
-          "focus": "Mechanics/Light Combo",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "A block and tackle system has a Velocity Ratio of 5. If the load is $1000 \\text{ N}$ and the effort applied is $250 \\text{ N}$, is the machine a force multiplier? Is the machine a speed multiplier? Justify your answers. [4]",
-              "ans": "Force Multiplier: Yes. Justification: $\\text{MA} = 1000/250 = 4$. Since $\\text{MA} > 1$, it is a force multiplier. Speed Multiplier: No. Justification: Since $\\text{MA} < \\text{VR}$, it is not an ideal machine. For a force multiplier, the distance moved by the effort is always greater than the distance moved by the load, meaning $\\text{VR} > 1$, so it is a **distance-decreasing** and thus **speed-decreasing** machine.",
-              "details": "Tests the properties of force/speed multiplication for a practical machine.",
-              "weightage": 4,
-              "why_important": "Application of MA/VR principles (Moments/Pulleys).",
-              "frequency": "Frequent application/reasoning question (2017, School Prelims)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Application)"
-            },
-            {
-              "text": "An object is placed $10 \\text{ cm}$ from a convex lens of focal length $15 \\text{ cm}$. Calculate the position and magnification of the image formed. [4]",
-              "ans": "Position: $-30 \\text{ cm}$. Magnification: $+3$.",
-              "details": "$u = -10 \\text{ cm}$, $f = +15 \\text{ cm}$. $\\frac{1}{v} = \\frac{1}{f} + \\frac{1}{u} = \\frac{1}{15} + \\frac{1}{-10} = \\frac{2 - 3}{30} = -\\frac{1}{30}$. $v = -30 \\text{ cm}$. $m = v/u = -30/-10 = +3$.",
-              "weightage": 4,
-              "why_important": "Numerical on the convex lens forming a virtual image (Magnifying glass case).",
-              "frequency": "Standard numerical (School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Calculation)"
-            },
-            {
-              "text": "Distinguish between a real image and a virtual image (two points). [2]",
-              "ans": "Real Image: Can be obtained on a screen; rays actually meet. Virtual Image: Cannot be obtained on a screen; rays only appear to meet.",
-              "details": "Checks the fundamental distinction between the two image types (Light).",
-              "weightage": 2,
-              "why_important": "Core theory in Light.",
-              "frequency": "Consistent theory question (2025 Specimen)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Definition)"
-            }
-          ]
-        }
-      ]
-    }
+    ]
+  },
+  "sectionB": {
+    "totalMarks": 40,
+    "instruction": "Attempt any four questions from this Section.",
+    "questions": [
+      {
+        "num": "5",
+        "focus": "Mechanics (Moments/Work)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "A uniform plank of mass $40 \\text{ kg}$ is $4 \\text{ m}$ long. It is supported at two points $\\text{A}$ and $\\text{B}$, which are at the two ends. A load of $60 \\text{ kgf}$ is placed at $1 \\text{ m}$ from end $\\text{A}$.",
+            "sub": [
+              "Calculate the reaction force at $\\text{B}$. [3]",
+              "Calculate the reaction force at $\\text{A}$. [3]"
+            ],
+            "ans": "1. $35 \\text{ kgf}$. 2. $65 \\text{ kgf}$.",
+            "details": "Plank Weight $W_P = 40 \\text{ kgf}$ acts at $2 \\text{ m}$ from $\\text{A}$. Load $L = 60 \\text{ kgf}$ acts at $1 \\text{ m}$ from $\\text{A}$. \\n1. Taking moments about $\\text{A}$: $\\text{Clockwise Moment} = W_P \\times 2 + L \\times 1 = 40 \\times 2 + 60 \\times 1 = 140 \\text{ kgf} \\cdot \\text{m}$. $\\text{Anti-Clockwise Moment} = R_B \\times 4$. $4 R_B = 140 \\implies R_B = 35 \\text{ kgf}$.\\n2. $\\text{Total Downward Force} = 40 + 60 = 100 \\text{ kgf}$. $\\text{Total Upward Force} = R_A + R_B$. $R_A + 35 = 100 \\implies R_A = 65 \\text{ kgf}$.",
+            "weightage": 6,
+            "why_important": "High-weightage application numerical on the Principle of Moments and non-uniform loading (Statics).",
+            "frequency": "Compulsory numerical in Section B (2017, School Prelims)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Application)"
+          },
+          {
+            "text": "A boy climbs a flight of stairs $10 \\text{ m}$ high in $20 \\text{ seconds}$. His power is $400 \\text{ W}$. Calculate the mass of the boy. $(g = 10 \\text{ N/kg})$ [4]",
+            "ans": "$80 \\text{ kg}$",
+            "details": "Power $P = \\frac{\\text{Work}}{\\text{Time}} = \\frac{m g h}{t}$. $m = \\frac{P \\cdot t}{g \\cdot h} = \\frac{400 \\text{ W} \\times 20 \\text{ s}}{10 \\text{ N/kg} \\times 10 \\text{ m}} = \\frac{8000}{100} = 80 \\text{ kg}$.",
+            "weightage": 4,
+            "why_important": "Application numerical on Power in W.E.P. (often Q1 but can be extended).",
+            "frequency": "Standard numerical in W.E.P. (School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Calculation)"
+          }
+        ]
+      },
+      {
+        "num": "6",
+        "focus": "Electricity (Circuits/Safety)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "Three resistors, $4 \\text{ \\Omega}$, $6 \\text{ \\Omega}$, and $12 \\text{ \\Omega}$, are connected in parallel to a $12 \\text{ V}$ battery.",
+            "sub": [
+              "Calculate the equivalent resistance of the circuit. [2]",
+              "Calculate the total current drawn from the battery. [2]",
+              "Calculate the current flowing through the $6 \\text{ \\Omega}$ resistor. [2]"
+            ],
+            "ans": "1. $2 \\text{ \\Omega}$. 2. $6 \\text{ A}$. 3. $2 \\text{ A}$.",
+            "details": "1. $\\frac{1}{R_p} = \\frac{1}{4} + \\frac{1}{6} + \\frac{1}{12} = \\frac{3+2+1}{12} = \\frac{6}{12} = \\frac{1}{2}$. $R_p = 2 \\text{ \\Omega}$.\\n2. $I_{\\text{total}} = V/R_p = 12 \\text{ V} / 2 \\text{ \\Omega} = 6 \\text{ A}$.\\n3. $\\text{Current in } 6 \\text{ \\Omega}$ resistor: $I_2 = V/R_2 = 12 \\text{ V} / 6 \\text{ \\Omega} = 2 \\text{ A}$.",
+            "weightage": 6,
+            "why_important": "Compulsory complex numerical on Parallel/Series circuits (a high-weightage format).",
+            "frequency": "Highly frequent and high-weightage numerical (2018, 2025 Specimen)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Calculation)"
+          },
+          {
+            "text": "State the use of a two-way switch in house wiring. Give two advantages of the ring system of wiring. [4]",
+            "ans": "Use: To control a single electrical device (usually a light) from two different positions (e.g., in a staircase, commonly known as staircase wiring). Advantages: 1. Allows smaller diameter wires to be used (lower current in each wire). 2. Enables appliances to continue working from the other side of the ring if a fault occurs.",
+            "details": "Checks knowledge of practical wiring components and system advantages.",
+            "weightage": 4,
+            "why_important": "Core theory on House Wiring and Safety.",
+            "frequency": "Frequent theory question (School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Theory)"
+          }
+        ]
+      },
+      {
+        "num": "7",
+        "focus": "Sound (Echo/Pitch)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "A person standing $49.5 \\text{ m}$ away from a wall claps and hears the echo $0.3 \\text{ s}$ later.",
+            "sub": [
+              "Calculate the speed of sound in air. [2]",
+              "If the air temperature changes and the speed of sound increases to $340 \\text{ m/s}$, calculate the new time interval for the echo. [2]"
+            ],
+            "ans": "1. $330 \\text{ m/s}$. 2. $0.29 \\text{ s}$.",
+            "details": "1. $\\text{Speed } v = \\frac{2d}{t} = \\frac{2 \\times 49.5 \\text{ m}}{0.3 \\text{ s}} = 330 \\text{ m/s}$.\\n2. $\\text{New Time } t' = \\frac{2d}{v'} = \\frac{2 \\times 49.5 \\text{ m}}{340 \\text{ m/s}} = \\frac{99}{340} \\approx 0.291 \\text{ s}$.",
+            "weightage": 4,
+            "why_important": "Numerical application of the Echo principle (Sound).",
+            "frequency": "Highly frequent numerical on Echo (2018, School Prelims)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Calculation)"
+          },
+          {
+            "text": "Distinguish between **pitch** and **loudness** of sound based on the **objective** properties of the wave. [4]",
+            "ans": "Pitch: The subjective property that depends on the **frequency** (Objective) of the wave. Loudness: The subjective property that depends on the **amplitude** (Objective) of the wave.",
+            "details": "Checks the objective-subjective relationship of sound properties.",
+            "weightage": 4,
+            "why_important": "Core theory on Sound properties (essential distinction).",
+            "frequency": "Very frequent theory question (2018, 2025 Specimen)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Concept)"
+          },
+          {
+            "text": "A glass tumbler suddenly cracks when a singer hits a high note. Name and define the phenomenon. [2]",
+            "ans": "Phenomenon: **Resonance**. Definition: The special case of forced vibration where the frequency of the applied external force (singer's note) is exactly equal to the natural frequency of the body (glass tumbler), leading to vibrations of maximum amplitude, causing the crack.",
+            "details": "Tests the application of Resonance in a real-life example.",
+            "weightage": 2,
+            "why_important": "Application-based theory on Resonance.",
+            "frequency": "Standard application question (School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Application)"
+          }
+        ]
+      },
+      {
+        "num": "8",
+        "focus": "Light (Refraction/TIR)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "Define the **angle of deviation** for a prism. State two ways to reduce the angle of deviation produced by a prism. [3]",
+            "ans": "Deviation: The angle between the direction of the incident ray and the direction of the emergent ray (for a prism). Ways to Reduce: 1. Decrease the angle of the prism ($A$). 2. Choose a material with a lower refractive index ($\\mu$). 3. Decrease the angle of incidence ($i$) towards the minimum deviation position.",
+            "details": "Checks definition and factors affecting deviation.",
+            "weightage": 3,
+            "why_important": "Core theory on Prism (Light).",
+            "frequency": "Consistent factors/definition question (School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Fact)"
+          },
+          {
+            "text": "The speed of light in a liquid is $2.0 \\times 10^8 \\text{ m/s}$. The speed of light in a vacuum is $3.0 \\times 10^8 \\text{ m/s}$. Calculate: 1. The refractive index of the liquid. [2] 2. The critical angle for the liquid-air boundary. [3]",
+            "ans": "1. 1.5. 2. $\\approx 41.8^{\\circ}$.",
+            "details": "1. $\\mu = c/v_{\\text{liquid}} = (3.0 \\times 10^8) / (2.0 \\times 10^8) = 1.5$. 2. $\\sin C = 1/\\mu = 1/1.5 = 0.666$. $C = \\sin^{-1}(0.666) \\approx 41.8^{\\circ}$.",
+            "weightage": 5,
+            "why_important": "Numerical application of $\\mu$ definition and TIR concept.",
+            "frequency": "Standard numerical chain (School Prelims, 2023 Sample)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Calculation)"
+          },
+          {
+            "text": "Give one reason why a thin convex lens is preferred over a thick convex lens of the same focal length. [2]",
+            "ans": "A thin lens has less spherical and chromatic aberration (defects) compared to a thick lens, making the image sharper and clearer.",
+            "details": "Checks knowledge of lens imperfections (Light).",
+            "weightage": 2,
+            "why_important": "Reasoning question on lens defects.",
+            "frequency": "Common reasoning question (School Prelims)",
+            "difficulty_importance": "Importance: 🔶 (Medium), Difficulty: 🟡 (Moderate/Reasoning)"
+          }
+        ]
+      },
+      {
+        "num": "9",
+        "focus": "Heat (Calorimetry)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "$10 \\text{ g}$ of steam at $100^{\\circ}\\text{C}$ is passed into $100 \\text{ g}$ of water at $20^{\\circ}\\text{C}$. Find the final temperature of the mixture.",
+            "sub": [
+              "Calculate the maximum heat that can be released by the steam if it condenses and cools to the final temperature $T$. [4]",
+              "Calculate the final temperature of the mixture $T$. [3]"
+            ],
+            "ans": "Final Temperature $\\mathbf{100^{\\circ}\\text{C}}$ (with some steam remaining).",
+            "details": "1. $\\text{Heat Gained to reach } 100^{\\circ}\\text{C}$ by water: $Q_{\\text{gain}} = m_w c_w \\Delta T = 100 \\times 4.2 \\times (100 - 20) = 33600 \\text{ J}$. $\\text{Heat Lost by } 10 \\text{ g}$ steam to condense: $Q_{\\text{steam condenses}} = m_{\\text{steam}} L_{\\text{vap}} = 10 \\times 2268 = 22680 \\text{ J}$. Since $Q_{\\text{gain}} (33600 \\text{ J}) > Q_{\\text{steam condenses}} (22680 \\text{ J})$, the steam will condense completely, and the final temperature will be $\\mathbf{100^{\\circ}\\text{C}}$ with some steam remaining to reach equilibrium.",
+            "weightage": 7,
+            "why_important": "Challenging numerical on Steam Calorimetry, checking phase change calculations.",
+            "frequency": "Highly frequent and high-weightage numerical (2018, School Prelims)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Application)"
+          },
+          {
+            "text": "Explain why food cooks faster in a pressure cooker. [3]",
+            "ans": "In a pressure cooker, the pressure above the water increases due to the sealed container. This increased pressure **raises the boiling point of water** above $100^{\\circ}\\text{C}$. The food is thus cooked at a higher temperature, which accelerates the cooking process.",
+            "details": "Checks the application of the effect of pressure on boiling point.",
+            "weightage": 3,
+            "why_important": "Standard reasoning question in Calorimetry.",
+            "frequency": "Regularly appears as a 'Give Reason' question (School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Reasoning)"
+          }
+        ]
+      },
+      {
+        "num": "10",
+        "focus": "Modern Physics (Radioactivity)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "An element ${}\\*{Z}^{A}\\text{X}$ undergoes a decay process to form an element ${}\\*{82}^{206}\\text{Pb}$ by the emission of two alpha particles and one beta particle. Determine the atomic number $(Z)$ and mass number $(A)$ of the element $\\text{X}$. [4]",
+            "ans": "$Z=83$, $A=214$.",
+            "details": "Mass Number $A$: $A = 206 + (2 \\times 4) + (1 \\times 0) = 206 + 8 = 214$. Atomic Number $Z$: $Z = 82 + (2 \\times 2) + (1 \\times (-1)) = 82 + 4 - 1 = 85$. **Correction based on common error/simplified calculation:** $Z=82 + 4 - 1 = 85$. **Actual Answer $Z=85, A=214$**. (The previous prompt example had $83/214$. I will stick to the correct derivation: $Z=85, A=214$)",
+            "weightage": 4,
+            "why_important": "Challenging numerical on balancing nuclear equations (Modern Physics).",
+            "frequency": "Highly frequent and high-weightage numerical (2018, School Prelims)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Application)"
+          },
+          {
+            "text": "State three properties that are common to all electromagnetic waves. [3]",
+            "ans": "1. All are transverse waves. 2. All travel at the speed of light ($3 \\times 10^8 \\text{ m/s}$) in a vacuum. 3. All are uncharged and hence are not deflected by electric or magnetic fields. 4. All carry energy and momentum.",
+            "details": "Checks the fundamental properties of EM Waves.",
+            "weightage": 3,
+            "why_important": "Core theory on EM Spectrum.",
+            "frequency": "Consistent theory question (2025 Specimen)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Fact)"
+          },
+          {
+            "text": "Give one major difference between nuclear fission and nuclear fusion. [3]",
+            "ans": "Fission: A heavy nucleus (e.g., Uranium) splits into two smaller nuclei. Fusion: Two light nuclei (e.g., Hydrogen isotopes) combine to form a heavier nucleus.",
+            "details": "Checks the distinction between the two processes.",
+            "weightage": 3,
+            "why_important": "Core distinction between the two nuclear processes.",
+            "frequency": "Standard comparison question (2018, School Prelims)",
+            "difficulty_importance": "Importance: 🔶 (Medium), Difficulty: 🟡 (Moderate/Concept)"
+          }
+        ]
+      },
+      {
+        "num": "11",
+        "focus": "Mechanics/Light Combo",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "A block and tackle system has a Velocity Ratio of 5. If the load is $1000 \\text{ N}$ and the effort applied is $250 \\text{ N}$, is the machine a force multiplier? Is the machine a speed multiplier? Justify your answers. [4]",
+            "ans": "Force Multiplier: Yes. Justification: $\\text{MA} = 1000/250 = 4$. Since $\\text{MA} > 1$, it is a force multiplier. Speed Multiplier: No. Justification: Since $\\text{MA} < \\text{VR}$, it is not an ideal machine. For a force multiplier, the distance moved by the effort is always greater than the distance moved by the load, meaning $\\text{VR} > 1$, so it is a **distance-decreasing** and thus **speed-decreasing** machine.",
+            "details": "Tests the properties of force/speed multiplication for a practical machine.",
+            "weightage": 4,
+            "why_important": "Application of MA/VR principles (Moments/Pulleys).",
+            "frequency": "Frequent application/reasoning question (2017, School Prelims)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Application)"
+          },
+          {
+            "text": "An object is placed $10 \\text{ cm}$ from a convex lens of focal length $15 \\text{ cm}$. Calculate the position and magnification of the image formed. [4]",
+            "ans": "Position: $-30 \\text{ cm}$. Magnification: $+3$.",
+            "details": "$u = -10 \\text{ cm}$, $f = +15 \\text{ cm}$. $\\frac{1}{v} = \\frac{1}{f} + \\frac{1}{u} = \\frac{1}{15} + \\frac{1}{-10} = \\frac{2 - 3}{30} = -\\frac{1}{30}$. $v = -30 \\text{ cm}$. $m = v/u = -30/-10 = +3$.",
+            "weightage": 4,
+            "why_important": "Numerical on the convex lens forming a virtual image (Magnifying glass case).",
+            "frequency": "Standard numerical (School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Calculation)"
+          },
+          {
+            "text": "Distinguish between a real image and a virtual image (two points). [2]",
+            "ans": "Real Image: Can be obtained on a screen; rays actually meet. Virtual Image: Cannot be obtained on a screen; rays only appear to meet.",
+            "details": "Checks the fundamental distinction between the two image types (Light).",
+            "weightage": 2,
+            "why_important": "Core theory in Light.",
+            "frequency": "Consistent theory question (2025 Specimen)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Definition)"
+          }
+        ]
+      }
+    ]
+  }
 }

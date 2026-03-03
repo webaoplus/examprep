@@ -1,0 +1,551 @@
+{
+  "id": "paper3",
+  "title": "ICSE Class X Physics Practice Paper 3",
+  "subtitle": "Electricity (Circuits/Power), Sound (Echo/Resonance), Mechanics (Levers/W.E.P.), Light (Refraction/Prism)",
+  "generalInstructions": [
+    "Answers to this Paper must be written on the paper provided separately.",
+    "You will not be allowed to write during the first 15 minutes.",
+    "The time given at the head of this Paper is the time allowed for writing the answers.",
+    "Section A is compulsory. Attempt any four questions from Section B.",
+    "The intended marks for questions or parts of questions are given in brackets [ ]."
+  ],
+  "sectionA": {
+    "totalMarks": 40,
+    "questions": [
+      {
+        "num": "1",
+        "marks": 15,
+        "type": "mcq",
+        "instruction": "Choose the correct answers to the questions from the given options.",
+        "items": [
+          {
+            "q": "The power dissipated in a circuit is given by $P = \\mathbf{V} \\cdot \\mathbf{I}$. This suggests that power is:",
+            "options": [
+              "A vector quantity",
+              "A scalar quantity",
+              "Sometimes vector, sometimes scalar",
+              "Measured in Newton-metre"
+            ],
+            "ans": "A scalar quantity",
+            "weightage": 1,
+            "why_important": "Tests the scalar nature of power despite being calculated from voltage and current.",
+            "frequency": "Consistent core concept (2025 Specimen, School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Concept)"
+          },
+          {
+            "q": "When a ray of light enters glass from air, its speed:",
+            "options": [
+              "Increases",
+              "Decreases",
+              "Remains constant",
+              "Becomes zero"
+            ],
+            "ans": "Decreases",
+            "weightage": 1,
+            "why_important": "Tests the effect of change in medium on wave speed (Refraction).",
+            "frequency": "Highly frequent concept (2018, School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Concept)"
+          },
+          {
+            "q": "If the tension in a stretched string is doubled, its frequency changes by a factor of:",
+            "options": [
+              "2",
+              "$\\\\sqrt{2}$",
+              "1/2",
+              "1/$\\\\sqrt{2}$"
+            ],
+            "ans": "$\\\\sqrt{2}$",
+            "weightage": 1,
+            "why_important": "Standard application of the Law of Tension ($f \\\\propto \\\\sqrt{T}$) (Sound).",
+            "frequency": "Frequent numerical/concept question (School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe1 (Moderate/Concept)"
+          },
+          {
+            "q": "The total mechanical energy of an object falling freely towards the earth:",
+            "options": [
+              "Increases",
+              "Decreases",
+              "Remains constant",
+              "Converts entirely to sound energy"
+            ],
+            "ans": "Remains constant",
+            "weightage": 1,
+            "why_important": "Tests the Law of Conservation of Energy (W.E.P.).",
+            "frequency": "Consistent core concept (2017, 2025 Specimen)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Concept)"
+          },
+          {
+            "q": "The function of a split-ring commutator in a DC motor is to:",
+            "options": [
+              "Increase the magnetic field strength",
+              "Reverse the direction of current in the coil every half rotation",
+              "Supply current to the coil",
+              "Reduce energy loss"
+            ],
+            "ans": "Reverse the direction of current in the coil every half rotation",
+            "weightage": 1,
+            "why_important": "Tests the key functional component of the DC Motor (Magnetism).",
+            "frequency": "Highly frequent theory question (2018, School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe2 (Easy/Fact)"
+          },
+          {
+            "q": "If a nucleus ${}_{Z}^{A}\\\\text{X}$ emits an $\\\\alpha$-particle, the new mass number of the nucleus is:",
+            "options": [
+              "$A-1$",
+              "$A-2$",
+              "$A-4$",
+              "$A$"
+            ],
+            "ans": "$A-4$",
+            "weightage": 1,
+            "why_important": "Tests the effect of $\\\\alpha$-decay on the mass number (Modern Physics).",
+            "frequency": "Standard theory question (2025 Specimen, School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Fact)"
+          },
+          {
+            "q": "A force of $10 \\\\text{ N}$ is applied to the handle of a hand pump $0.5 \\\\text{ m}$ from the fulcrum. The moment of force produced is:",
+            "options": [
+              "$20 \\\\text{ N} \\\\cdot \\\\text{m}$",
+              "$5 \\\\text{ N} \\\\cdot \\\\text{m}$",
+              "$50 \\\\text{ N} \\\\cdot \\\\text{m}$",
+              "$0.5 \\\\text{ N} \\\\cdot \\\\text{m}$"
+            ],
+            "ans": "$5 \\\\text{ N} \\\\cdot \\\\text{m}$",
+            "weightage": 1,
+            "why_important": "Simple numerical on the formula for Moment of Force.",
+            "frequency": "Compulsory numerical in Mechanics (2017)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Calculation)"
+          },
+          {
+            "q": "The temperature of a substance during melting (phase change) for a constant heat supply:",
+            "options": [
+              "Increases rapidly",
+              "Decreases slowly",
+              "Remains constant",
+              "Cannot be predicted"
+            ],
+            "ans": "Remains constant",
+            "weightage": 1,
+            "why_important": "Tests the concept of latent heat (Heat/Calorimetry).",
+            "frequency": "Consistent core concept (2018)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Concept)"
+          },
+          {
+            "q": "The minimum distance required between the source and the reflector to hear a distinct echo is primarily determined by the:",
+            "options": [
+              "Frequency of the sound",
+              "Amplitude of the sound",
+              "Velocity of sound and persistence of hearing",
+              "Atmospheric pressure"
+            ],
+            "ans": "Velocity of sound and persistence of hearing",
+            "weightage": 1,
+            "why_important": "Tests the condition for a distinct echo (Sound).",
+            "frequency": "Highly frequent theory question (2018, School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe1 (Moderate/Concept)"
+          },
+          {
+            "q": "Which type of lens is used to correct Myopia?",
+            "options": [
+              "Convex (Converging)",
+              "Concave (Diverging)",
+              "Plano-Convex",
+              "Plano-Concave"
+            ],
+            "ans": "Concave (Diverging)",
+            "weightage": 1,
+            "why_important": "Tests the correction method for a vision defect (Light).",
+            "frequency": "Standard theory on eye defects (2023 Sample, School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Fact)"
+          },
+          {
+            "q": "The energy stored in a spring when compressed is an example of:",
+            "options": [
+              "Kinetic Energy",
+              "Chemical Energy",
+              "Elastic Potential Energy",
+              "Gravitational Potential Energy"
+            ],
+            "ans": "Elastic Potential Energy",
+            "weightage": 1,
+            "why_important": "Tests the classification of energy types (W.E.P.).",
+            "frequency": "Consistent core concept (2025 Specimen)",
+            "difficulty_importance": "Importance: \ud83d\udd36 (Medium), Difficulty: \ud83d\udfe2 (Easy/Definition)"
+          },
+          {
+            "q": "A parallel circuit is preferred in household wiring because the voltage across each appliance is:",
+            "options": [
+              "Different",
+              "Zero",
+              "The same",
+              "Lower than the mains voltage"
+            ],
+            "ans": "The same",
+            "weightage": 1,
+            "why_important": "Tests the core reason for parallel wiring (Electricity).",
+            "frequency": "Highly frequent theory question (2018, 2025 Specimen)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe2 (Easy/Concept)"
+          },
+          {
+            "q": "The speed of light in a diamond is $1.24 \\\\times 10^8 \\\\text{ m/s}$. The refractive index is closest to:",
+            "options": [
+              "1.33",
+              "1.5",
+              "2.0",
+              "2.42"
+            ],
+            "ans": "2.42",
+            "weightage": 1,
+            "why_important": "Numerical application of the definition of refractive index (Light).",
+            "frequency": "Standard numerical (2023 Sample)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe1 (Moderate/Calculation)"
+          },
+          {
+            "q": "The unit of Thermal Capacity is:",
+            "options": [
+              "Joule/kg",
+              "Joule/kg $\\\\cdot$ K",
+              "Joule/K",
+              "Joule $\\\\cdot$ K"
+            ],
+            "ans": "Joule/K",
+            "weightage": 1,
+            "why_important": "Tests the correct S.I. unit of Thermal Capacity (Heat/Calorimetry).",
+            "frequency": "Consistent short question (2018, School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udd36 (Medium), Difficulty: \ud83d\udfe2 (Easy/Fact)"
+          },
+          {
+            "q": "The force required to lift a load of $1000 \\\\text{ N}$ using an ideal single movable pulley is:",
+            "options": [
+              "$500 \\\\text{ N}$",
+              "$1000 \\\\text{ N}$",
+              "$2000 \\\\text{ N}$",
+              "$250 \\\\text{ N}$"
+            ],
+            "ans": "$500 \\\\text{ N}$",
+            "weightage": 1,
+            "why_important": "Tests the mechanical advantage of a single movable pulley ($MA=2$ ideal).",
+            "frequency": "Standard concept (2017, School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Concept)"
+          }
+        ]
+      },
+      {
+        "num": "2",
+        "marks": 8,
+        "type": "short",
+        "parts": [
+          {
+            "text": "The bob of a simple pendulum is displaced from its mean position. State the energy conversion that occurs as the bob moves from the mean position to the extreme position. [2]",
+            "ans": "Kinetic Energy (KE) is converted into Gravitational Potential Energy (PE).",
+            "details": "At the mean position, KE is maximum. At the extreme position, PE is maximum (KE is zero).",
+            "weightage": 2,
+            "why_important": "Tests energy transformation in a key oscillatory system (W.E.P.).",
+            "frequency": "Frequent concept question (2017, 2025 Specimen)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Concept)"
+          },
+          {
+            "text": "State Snell's Law of Refraction. Draw a diagram to show the angle of refraction when a ray of light travels from glass (denser) into air (rarer). [3]",
+            "ans": "Snell's Law: The ratio of the sine of the angle of incidence ($i$) to the sine of the angle of refraction ($r$) is constant for a given pair of media ($\\\\sin i / \\\\sin r = \\\\mu$). Diagram: Shows a ray incident from glass, refracting away from the normal into air, with $r > i$.",
+            "weightage": 3,
+            "why_important": "Core law and diagram for refraction.",
+            "frequency": "Highly frequent law and diagram question (2024 School Prelims, 2025 Specimen Pattern)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe1 (Moderate/Concept/Diagram)"
+          },
+          {
+            "text": "A motor has a power rating of $1 \\\\text{ kW}$. Calculate the time required for the motor to lift a load of $500 \\\\text{ N}$ through a height of $10 \\\\text{ m}$. [3]",
+            "ans": "$5 \\\\text{ seconds}$",
+            "details": "Work Done $W = 500 \\\\times 10 = 5000 \\\\text{ J}$. Time $t = W / P = 5000 / 1000 = 5 \\\\text{ s}$.",
+            "weightage": 3,
+            "why_important": "Numerical application of the Power formula (W.E.P.).",
+            "frequency": "Compulsory numerical (2018, School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe1 (Moderate/Calculation)"
+          }
+        ]
+      },
+      {
+        "num": "3",
+        "marks": 8,
+        "type": "short",
+        "parts": [
+          {
+            "text": "Define the term Specific Resistivity of a material and state its S.I. unit. [3]",
+            "ans": "Specific Resistivity: The resistance offered by a unit length of a material having a unit area of cross-section. S.I. Unit: ohm-metre ($\\\\Omega \\\\cdot \\\\text{m}$).",
+            "weightage": 3,
+            "why_important": "Core definition and unit (Electricity).",
+            "frequency": "Very frequent short definition (2017, School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe2 (Easy/Definition)"
+          },
+          {
+            "text": "The velocity of sound in a medium is $330 \\\\text{ m/s}$. A person claps near a cliff and hears an echo $1.5 \\\\text{ s}$ later. Calculate the distance to the cliff. [3]",
+            "ans": "$247.5 \\\\text{ m}$",
+            "details": "Distance $d = v \\\\cdot t / 2 = 330 \\\\times 1.5 / 2 = 247.5 \\\\text{ m}$.",
+            "weightage": 3,
+            "why_important": "Standard numerical on Echo (Sound).",
+            "frequency": "Highly frequent numerical (2018, School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe1 (Moderate/Calculation)"
+          },
+          {
+            "text": "Why is the base of a cooking pan generally made thick? [2]",
+            "ans": "A thick base provides a large thermal capacity, ensuring even and efficient cooking by absorbing and retaining heat.",
+            "weightage": 2,
+            "why_important": "Standard reasoning question (School Prelims).",
+            "frequency": "Regularly appears as a Give Reason question (School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udd36 (Medium), Difficulty: \ud83d\udfe1 (Moderate/Reasoning)"
+          }
+        ]
+      },
+      {
+        "num": "4",
+        "marks": 9,
+        "type": "short",
+        "parts": [
+          {
+            "text": "A block and tackle system has a VR of 4. If the machine is $85\\\\%$ efficient, what is its Mechanical Advantage (MA)? [3]",
+            "ans": "$3.4$",
+            "details": "MA $= \\\\eta \\\\times VR = 0.85 \\\\times 4 = 3.4$.",
+            "weightage": 3,
+            "why_important": "Numerical application of the MA-VR-Efficiency relationship (Mechanics).",
+            "frequency": "Compulsory numerical (2017, School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe1 (Moderate/Calculation)"
+          },
+          {
+            "text": "Draw a ray diagram to show the path of a ray of light when it enters a prism at the minimum deviation position. [4]",
+            "ans": "Diagram shows: Ray entering and emerging such that $i=e$. The ray inside the prism is parallel to the base. Labels: Incident ray, Emergent ray, Angle of Prism ($A$), Angle of Deviation ($D$).",
+            "weightage": 4,
+            "why_important": "Compulsory Diagram/Theory question (Light).",
+            "frequency": "Highly frequent diagram question (2017, 2024 School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe1 (Moderate/Diagram)"
+          },
+          {
+            "text": "Give one reason why a thin fuse wire of low melting point is essential. [2]",
+            "ans": "Low melting point ensures the fuse melts and breaks the circuit quickly when current exceeds the safe limit. Thin wire has higher resistance, heating up rapidly.",
+            "weightage": 2,
+            "why_important": "Standard reasoning question on safety devices (Electricity).",
+            "frequency": "Highly frequent reasoning question (2018, 2025 Specimen)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Reasoning)"
+          }
+        ]
+      }
+    ]
+  },
+  "sectionB": {
+    "totalMarks": 40,
+    "instruction": "Attempt any four questions from this Section.",
+    "questions": [
+      {
+        "num": "5",
+        "focus": "Electricity (Circuits/Power)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "A domestic circuit has three $100 \\\\text{ W}$ bulbs and one $1000 \\\\text{ W}$ heater connected in parallel to a $220 \\\\text{ V}$ mains supply.",
+            "sub": [
+              "Calculate the total current drawn from the mains. [3]",
+              "If the fuse rating is $5 \\\\text{ A}$, what will happen to the circuit? Justify your answer. [3]"
+            ],
+            "ans": "1. Approx $5.91 \\\\text{ A}$. 2. The fuse will blow because the total current ($5.91 \\\\text{ A}$) exceeds the fuse rating ($5 \\\\text{ A}$).",
+            "details": "Total Power $= 1300 \\\\text{ W}$. Current $= 1300/220 \\\\approx 5.91 \\\\text{ A}$.",
+            "weightage": 6,
+            "why_important": "Compulsory high-weightage numerical on parallel circuits and safety devices.",
+            "frequency": "Highly frequent numerical (2018, 2025 Specimen)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udd34 (Challenging/Application)"
+          },
+          {
+            "text": "State two differences between a step-up and a step-down transformer (two points each). [4]",
+            "ans": "Step-Up: 1. Increases voltage, decreases current. 2. $N_S > N_P$. Step-Down: 1. Decreases voltage, increases current. 2. $N_S < N_P$.",
+            "weightage": 4,
+            "why_important": "Core theory on transformers.",
+            "frequency": "Frequent theory question (School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Definition)"
+          }
+        ]
+      },
+      {
+        "num": "6",
+        "focus": "Mechanics (Levers/W.E.P.)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "A pair of scissors and a human forearm lifting a load are examples of levers. State the class of lever for each example and determine if they are force or speed multipliers. [4]",
+            "ans": "Scissors: Class I; Can be Force or Speed multiplier. Human Forearm: Class III; Always a Speed Multiplier (MA < 1).",
+            "weightage": 4,
+            "why_important": "Core theory/application of Levers.",
+            "frequency": "Frequent application question (2017, School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe1 (Moderate/Application)"
+          },
+          {
+            "text": "A motor is used to lift $2000 \\\\text{ kg}$ of water from a depth of $50 \\\\text{ m}$ in $50 \\\\text{ seconds}$. ($g = 10 \\\\text{ N/kg}$)",
+            "sub": [
+              "Calculate the work done in lifting the water. [3]",
+              "Calculate the power of the motor. [3]"
+            ],
+            "ans": "1. $1,000,000 \\\\text{ J}$. 2. $20,000 \\\\text{ W}$ ($20 \\\\text{ kW}$).",
+            "details": "$W = mgh = 2000 \\\\times 10 \\\\times 50 = 1,000,000 \\\\text{ J}$. $P = W/t = 20,000 \\\\text{ W}$.",
+            "weightage": 6,
+            "why_important": "High-weightage numerical on Work and Power (W.E.P.).",
+            "frequency": "Compulsory numerical in Section B (2018, School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe1 (Moderate/Calculation)"
+          }
+        ]
+      },
+      {
+        "num": "7",
+        "focus": "Light (Lenses/Prism)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "A ray of white light is incident on a prism. State the order of colours of the spectrum obtained on a screen from the base of the prism upwards. State the cause of the dispersion of light. [4]",
+            "ans": "Order (Base Upwards): Violet, Indigo, Blue, Green, Yellow, Orange, Red (VIBGYOR). Cause: The refractive index of glass is different for different wavelengths of light.",
+            "weightage": 4,
+            "why_important": "Core theory on Dispersion.",
+            "frequency": "Highly frequent theory question (2017, School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe2 (Easy/Fact/Concept)"
+          },
+          {
+            "text": "An object is placed at a distance of $40 \\\\text{ cm}$ from a concave lens of focal length $20 \\\\text{ cm}$.",
+            "sub": [
+              "Calculate the image distance. [3]",
+              "State the nature and size (magnification) of the image. [3]"
+            ],
+            "ans": "1. $-13.33 \\\\text{ cm}$. 2. Virtual, Erect, Diminished (Magnification $\\\\approx 0.33$).",
+            "details": "$1/v = 1/(-20) + 1/(-40) = -3/40$. $v = -13.33 \\\\text{ cm}$. $m = +1/3$.",
+            "weightage": 6,
+            "why_important": "High-weightage numerical on the concave lens (Light).",
+            "frequency": "Compulsory numerical in Section B (2025 Specimen, School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe1 (Moderate/Calculation)"
+          }
+        ]
+      },
+      {
+        "num": "8",
+        "focus": "Sound (Resonance/Sonometer)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "Define resonance. Give one example of a harmful effect of resonance in engineering. [4]",
+            "ans": "Resonance: The condition of forced vibration where the frequency of the external force equals the natural frequency of the body, leading to maximum amplitude vibrations. Harmful Effect: Structural damage such as collapse of bridges due to marching troops.",
+            "weightage": 4,
+            "why_important": "Core definition and application of Resonance (Sound).",
+            "frequency": "Highly frequent theory question (2018, School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe1 (Moderate/Theory)"
+          },
+          {
+            "text": "A tuning fork produces sound waves in air at a frequency of $250 \\\\text{ Hz}$. If the speed of sound is $340 \\\\text{ m/s}$, calculate the wavelength of the waves. [3]",
+            "ans": "$1.36 \\\\text{ m}$",
+            "details": "$\\\\lambda = v/f = 340/250 = 1.36 \\\\text{ m}$.",
+            "weightage": 3,
+            "why_important": "Numerical application of the wave equation (Sound).",
+            "frequency": "Standard numerical (2018, School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Calculation)"
+          },
+          {
+            "text": "How does the pitch of a vibrating string change if the wire is replaced by a wire of the same material, same length, and same tension, but with a thickness four times the original? [3]",
+            "ans": "The pitch becomes one-fourth of the original. Since $f \\\\propto 1/\\\\sqrt{m}$ and linear density $m \\\\propto r^2$, when thickness (diameter) is 4 times, $m$ becomes 16 times, so $f \\\\propto 1/4$.",
+            "weightage": 3,
+            "why_important": "Advanced application of Sonometer Laws.",
+            "frequency": "Advanced application question (School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udd34 (Challenging/Application)"
+          }
+        ]
+      },
+      {
+        "num": "9",
+        "focus": "Mechanics (Moments/Levers)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "Draw a neat, labelled diagram of a Class II lever. State two advantages and one disadvantage of a Class II lever. [5]",
+            "ans": "Diagram: Fulcrum at one end, Load in the middle, Effort at the other end (e.g., wheelbarrow). Advantages: 1. Always a force multiplier (MA >= 1). 2. Load arm is shorter than effort arm. Disadvantage: Speed reducer (load moves less than effort).",
+            "weightage": 5,
+            "why_important": "Core theory/diagram on Levers.",
+            "frequency": "Highly frequent theory/diagram question (2017, School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe1 (Moderate/Diagram/Theory)"
+          },
+          {
+            "text": "A uniform plank of length $5 \\\\text{ m}$ is supported at its centre. A weight of $20 \\\\text{ kgf}$ is placed at the $1.5 \\\\text{ m}$ mark. Where must a $40 \\\\text{ kgf}$ weight be placed to balance the plank? [3]",
+            "ans": "$0.5 \\\\text{ m}$ from the centre (at the $3.0 \\\\text{ m}$ mark).",
+            "details": "Pivot at 2.5 m. Clockwise moment $= 20 \\\\times 1.0 = 20$. Anti-clockwise: $40 \\\\times d = 20$, $d = 0.5 \\\\text{ m}$.",
+            "weightage": 3,
+            "why_important": "Numerical application of the Principle of Moments.",
+            "frequency": "Standard numerical (2017, School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe1 (Moderate/Calculation)"
+          },
+          {
+            "text": "State the condition for a body to be in dynamic equilibrium. [2]",
+            "ans": "The body must be moving with constant velocity (zero acceleration) and the net force acting on it must be zero.",
+            "weightage": 2,
+            "why_important": "Core definition (Mechanics).",
+            "frequency": "Consistent short definition (School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udd36 (Medium), Difficulty: \ud83d\udfe2 (Easy/Definition)"
+          }
+        ]
+      },
+      {
+        "num": "10",
+        "focus": "Electricity (AC/DC, Motor/Generator)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "Differentiate between an AC generator and a DC motor (two points each). [4]",
+            "ans": "AC Generator: 1. Converts Mechanical Energy to Electrical Energy. 2. Uses Slip Rings. DC Motor: 1. Converts Electrical Energy to Mechanical Energy. 2. Uses a Split Ring Commutator.",
+            "weightage": 4,
+            "why_important": "Core theory on Motor/Generator (essential comparison).",
+            "frequency": "Highly frequent theory question (2018, School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udfe1 (Moderate/Concept)"
+          },
+          {
+            "text": "A device is rated $1000 \\\\text{ W}, 220 \\\\text{ V}$. Calculate its resistance. If it is run on a $110 \\\\text{ V}$ supply, calculate the power consumed. (Assume resistance is constant) [4]",
+            "ans": "Resistance: $48.4 \\\\text{ \\\\Omega}$. Power Consumed: $250 \\\\text{ W}$.",
+            "details": "$R = V^2/P = 48400/1000 = 48.4 \\\\text{ \\\\Omega}$. $P' = 110^2/48.4 = 250 \\\\text{ W}$.",
+            "weightage": 4,
+            "why_important": "Challenging numerical on resistance and power consumption (Electricity).",
+            "frequency": "Advanced application numerical (School Prelims)",
+            "difficulty_importance": "Importance: \ud83d\udc51 (Very High), Difficulty: \ud83d\udd34 (Challenging/Application)"
+          },
+          {
+            "text": "State the rule used to find the direction of the induced current in an AC generator. [2]",
+            "ans": "Fleming's Right-Hand Rule.",
+            "weightage": 2,
+            "why_important": "Core principle of the Generator.",
+            "frequency": "Frequent theory question (School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Fact)"
+          }
+        ]
+      },
+      {
+        "num": "11",
+        "focus": "Mechanics/Sound Combo",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "A motor has a maximum efficiency of $90\\\\%$. If the motor uses $5000 \\\\text{ J}$ of electrical energy, calculate the work done by the motor against friction. [4]",
+            "ans": "$500 \\\\text{ J}$",
+            "details": "$W_{\\\\text{out}} = 0.90 \\\\times 5000 = 4500 \\\\text{ J}$. Work wasted $= 5000 - 4500 = 500 \\\\text{ J}$.",
+            "weightage": 4,
+            "why_important": "Numerical application of the Wasted Work formula (Mechanics).",
+            "frequency": "Standard numerical (2017, School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe1 (Moderate/Calculation)"
+          },
+          {
+            "text": "The fundamental frequency of a wire under tension is $200 \\\\text{ Hz}$. What frequency should a tuning fork have to cause resonance in the wire if the wire is divided into three equal segments? [3]",
+            "ans": "$600 \\\\text{ Hz}$",
+            "details": "Each segment has fundamental frequency $f' = 3 f_0 = 3 \\\\times 200 = 600 \\\\text{ Hz}$.",
+            "weightage": 3,
+            "why_important": "Application of the Law of Length and Resonance (Sound).",
+            "frequency": "Advanced application question (School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe1 (Moderate/Application)"
+          },
+          {
+            "text": "A boy shouts in an empty building, and the sound seems prolonged. Name the phenomenon and state how it can be reduced. [3]",
+            "ans": "Phenomenon: Reverberation. Reduction: By using sound-absorbing materials (e.g., curtains, carpets, acoustic panels) on the walls and ceiling.",
+            "weightage": 3,
+            "why_important": "Standard theory/application of acoustics (Sound).",
+            "frequency": "Frequent theory question (2018, School Prelims)",
+            "difficulty_importance": "Importance: \u2b50 (High), Difficulty: \ud83d\udfe2 (Easy/Concept)"
+          }
+        ]
+      }
+    ]
+  }
+}

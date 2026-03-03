@@ -1,0 +1,552 @@
+{
+  "id": "paper10",
+  "title": "ICSE Class X Physics Practice Paper 10",
+  "subtitle": "Comprehensive Review: Moments/Energy, Calorimetry/Phase Change, Lenses/Defects, Radioactivity, Power/Circuits",
+  "generalInstructions": [
+    "Answers to this Paper must be written on the paper provided separately.",
+    "You will not be allowed to write during the first 15 minutes.",
+    "The time given at the head of this Paper is the time allowed for writing the answers.",
+    "Section A is compulsory. Attempt any four questions from Section B.",
+    "The intended marks for questions or parts of questions are given in brackets [ ]."
+  ],
+  "sectionA": {
+    "totalMarks": 40,
+    "questions": [
+      {
+        "num": "1",
+        "marks": 15,
+        "type": "mcq",
+        "instruction": "Choose the correct answers to the questions from the given options.",
+        "items": [
+          {
+            "q": "The product of the specific latent heat and the mass of the substance is a measure of the:",
+            "options": [
+              "Specific Heat Capacity",
+              "Thermal Capacity",
+              "Latent Heat",
+              "Heat required for phase change"
+            ],
+            "ans": "Heat required for phase change",
+            "weightage": 1,
+            "why_important": "Tests the formula $\\mathbf{Q = m L}$ and the meaning of latent heat.",
+            "frequency": "High (Formula-based concept, 2023 Sample, School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Formula)"
+          },
+          {
+            "q": "The magnifying power of a simple microscope is maximum when the final image is formed at:",
+            "options": [
+              "Infinity",
+              "The principal focus",
+              "The least distance of distinct vision (D)",
+              "Twice the focal length"
+            ],
+            "ans": "The least distance of distinct vision (D)",
+            "weightage": 1,
+            "why_important": "Tests the condition for maximum magnification of a convex lens (Light).",
+            "frequency": "Consistent theory question (School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe1 (Moderate/Concept)"
+          },
+          {
+            "q": "If the length of a resistor wire is doubled, keeping its area of cross-section constant, its new resistance is:",
+            "options": [
+              "Halved",
+              "Doubled",
+              "Four times",
+              "Unchanged"
+            ],
+            "ans": "Doubled",
+            "weightage": 1,
+            "why_important": "Tests the relationship between resistance and length ($\\mathbf{R \\\\propto L}$), a key concept in Electricity.",
+            "frequency": "Highly frequent concept (2018, 2025 Specimen, School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udfe2 (Easy/Concept)"
+          },
+          {
+            "q": "The energy possessed by a body due to its position or state is called:",
+            "options": [
+              "Kinetic Energy",
+              "Thermal Energy",
+              "Potential Energy",
+              "Chemical Energy"
+            ],
+            "ans": "Potential Energy",
+            "weightage": 1,
+            "why_important": "Tests the definition of a fundamental energy type (W.E.P.).",
+            "frequency": "Consistent core definition (2017)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Definition)"
+          },
+          {
+            "q": "The net force acting on a body moving in a horizontal circle is directed:",
+            "options": [
+              "Away from the centre",
+              "Towards the centre",
+              "Tangentially to the path",
+              "Opposite to the velocity"
+            ],
+            "ans": "Towards the centre",
+            "weightage": 1,
+            "why_important": "Tests the nature and direction of centripetal force (Mechanics).",
+            "frequency": "Frequent concept question (School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Concept)"
+          },
+          {
+            "q": "The emission of a $\\\\gamma$-ray from a nucleus results in:",
+            "options": [
+              "A change in $Z$ and $A$",
+              "A change in $A$ only",
+              "No change in $Z$ or $A$",
+              "A change in $Z$ only"
+            ],
+            "ans": "No change in $Z$ or $A$",
+            "weightage": 1,
+            "why_important": "Tests the effect of $\\\\gamma$-decay on atomic and mass numbers (Modern Physics).",
+            "frequency": "Frequent theory question (2018, 2025 Specimen)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Fact)"
+          },
+          {
+            "q": "Which of the following is true for an ideal machine?",
+            "options": [
+              "Work Output $>$ Work Input",
+              "Efficiency $< 100\\\\text{\\\\%}$",
+              "Work Output $=$ Work Input",
+              "MA $\\\\neq$ VR"
+            ],
+            "ans": "Work Output $=$ Work Input",
+            "weightage": 1,
+            "why_important": "Tests the definition and condition for an ideal machine (Mechanics).",
+            "frequency": "Consistent core concept (2017, School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udd36 (Medium), Difficulty: \\ud83d\\udfe2 (Easy/Definition)"
+          },
+          {
+            "q": "If the angle of incidence is $0^{\\\\circ}$ on a glass slab, the angle of refraction is:",
+            "options": [
+              "Equal to the critical angle",
+              "$45^{\\\\circ}$",
+              "$90^{\\\\circ}$",
+              "$0^{\\\\circ}$"
+            ],
+            "ans": "$0^{\\\\circ}$",
+            "weightage": 1,
+            "why_important": "Tests the condition for normal incidence (Light).",
+            "frequency": "Standard concept in Refraction (School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Concept)"
+          },
+          {
+            "q": "The objective property of sound that determines its loudness is:",
+            "options": [
+              "Frequency",
+              "Wavelength",
+              "Amplitude",
+              "Pitch"
+            ],
+            "ans": "Amplitude",
+            "weightage": 1,
+            "why_important": "Tests the subjective vs. objective property relationship (Sound).",
+            "frequency": "Highly frequent core theory (2018, School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udfe2 (Easy/Concept)"
+          },
+          {
+            "q": "An electric iron rated $1500 \\\\text{ W}, 220 \\\\text{ V}$ has a resistance of:",
+            "options": [
+              "$32.2 \\\\text{ \\\\Omega}$",
+              "$50 \\\\text{ \\\\Omega}$",
+              "$0.15 \\\\text{ \\\\Omega}$",
+              "$55 \\\\text{ \\\\Omega}$"
+            ],
+            "ans": "$32.2 \\\\text{ \\\\Omega}$",
+            "weightage": 1,
+            "why_important": "Numerical application of $R = V^2/P$ (Electricity).",
+            "frequency": "Compulsory numerical (2017, School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe1 (Moderate/Calculation)"
+          },
+          {
+            "q": "The energy change when a hydroelectric power plant operates is:",
+            "options": [
+              "PE $\\\\rightarrow$ Chemical $\\\\rightarrow$ Electrical",
+              "PE $\\\\rightarrow$ KE $\\\\rightarrow$ Electrical",
+              "KE $\\\\rightarrow$ PE $\\\\rightarrow$ Electrical",
+              "Heat $\\\\rightarrow$ KE $\\\\rightarrow$ Electrical"
+            ],
+            "ans": "PE $\\\\rightarrow$ KE $\\\\rightarrow$ Electrical",
+            "weightage": 1,
+            "why_important": "Tests a key energy transformation (W.E.P.).",
+            "frequency": "Standard transformation concept (2025 Specimen)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Concept)"
+          },
+          {
+            "q": "The essential component of a transformer that is laminated is the:",
+            "options": [
+              "Primary coil",
+              "Secondary coil",
+              "Core",
+              "Insulation"
+            ],
+            "ans": "Core",
+            "weightage": 1,
+            "why_important": "Tests the component responsible for reducing eddy current loss (Magnetism/Electricity).",
+            "frequency": "Frequent theory question (School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udd36 (Medium), Difficulty: \\ud83d\\udfe2 (Easy/Fact)"
+          },
+          {
+            "q": "The final image formed by a compound microscope is:",
+            "options": [
+              "Real and inverted",
+              "Virtual and erect",
+              "Real and highly magnified",
+              "Virtual and inverted"
+            ],
+            "ans": "Virtual and inverted",
+            "weightage": 1,
+            "why_important": "Tests the properties of the image formed by a compound microscope (Light).",
+            "frequency": "Consistent core theory (2018, School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udfe1 (Moderate/Concept)"
+          },
+          {
+            "q": "Which of the following is true for a Beta ($\\\\beta$) particle?",
+            "options": [
+              "It is the same as a Helium nucleus.",
+              "It is an electron.",
+              "It has low penetrating power.",
+              "It travels slower than an Alpha particle."
+            ],
+            "ans": "It is an electron.",
+            "weightage": 1,
+            "why_important": "Tests the identity of a $\\\\beta$-particle (Modern Physics).",
+            "frequency": "Standard theory question (2025 Specimen)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Fact)"
+          },
+          {
+            "q": "The distance of $10 \\\\text{ cm}$ from the fulcrum is the load arm. The effort arm is $40 \\\\text{ cm}$. The VR is:",
+            "options": [
+              "$0.25$",
+              "$4$",
+              "$5$",
+              "Impossible to determine"
+            ],
+            "ans": "$4$",
+            "weightage": 1,
+            "why_important": "Numerical application of $VR = E_{\\\\text{distance}}/L_{\\\\text{distance}}$ (Mechanics).",
+            "frequency": "Standard numerical (School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Calculation)"
+          }
+        ]
+      },
+      {
+        "num": "2",
+        "marks": 8,
+        "type": "short",
+        "parts": [
+          {
+            "text": "The far point of a person is $400 \\\\text{ cm}$. Calculate the power of the lens required to restore normal vision. [3]",
+            "ans": "$-0.25 \\\\text{ D}$",
+            "details": "Defect: Myopia. $1/f = 1/v - 1/u = 1/(-4) - 1/(-\\\\infty) = -1/4$. $P = 1/f = -0.25 \\\\text{ D}$.",
+            "weightage": 3,
+            "why_important": "Compulsory numerical on eye defects (Light).",
+            "frequency": "Highly frequent numerical (2023 Sample, School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udfe1 (Moderate/Application)"
+          },
+          {
+            "text": "State the Principle of Moments. Give one example of a Class I lever where the MA is greater than 1. [3]",
+            "ans": "Principle: For a body in rotational equilibrium, the sum of all clockwise moments about the pivot is equal to the sum of all anti-clockwise moments. Example: Crowbar, Claw Hammer.",
+            "details": "Checks the full statement of the principle and a real-life example of a force multiplier lever (Mechanics).",
+            "weightage": 3,
+            "why_important": "Core definition and application of Moments.",
+            "frequency": "Very frequent definition/example pair (2018, 2025 Specimen)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Definition)"
+          },
+          {
+            "text": "Why are copper wires generally used as connecting wires in electrical circuits? [2]",
+            "ans": "Copper has a very low resistivity (it is an excellent conductor), which minimizes the resistance of the connecting wires, ensuring minimal energy loss as heat.",
+            "details": "Checks the reasoning for material choice based on resistivity (Electricity).",
+            "weightage": 2,
+            "why_important": "Standard reasoning question in Electricity.",
+            "frequency": "Common reasoning question (School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Reasoning)"
+          }
+        ]
+      },
+      {
+        "num": "3",
+        "marks": 8,
+        "type": "short",
+        "parts": [
+          {
+            "text": "A block of wood floats on water. What is the work done by the buoyant force on the block when it is at rest? Justify your answer. [3]",
+            "ans": "Work done is zero. Justification: Work is done only if the point of application of the force undergoes a displacement in the direction of the force. Since the block is at rest (no displacement), the buoyant force does zero work on the block.",
+            "weightage": 3,
+            "why_important": "Conceptual check on the definition of Work.",
+            "frequency": "Conceptual questions (School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udd34 (Challenging/Concept)"
+          },
+          {
+            "text": "State two factors that affect the pitch of a vibrating stretched string. Which is more important for a microphone: high sensitivity or wide frequency response? [3]",
+            "ans": "Factors: 1. Tension ($T$). 2. Length ($L$). 3. Linear density ($m$). Microphone: Wide Frequency Response.",
+            "weightage": 3,
+            "why_important": "Core theory on Sonometer and advanced Sound concepts.",
+            "frequency": "Frequent factors/application question (School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe1 (Moderate/Application)"
+          },
+          {
+            "text": "Define the term calorie. State the difference between heat and temperature. [2]",
+            "ans": "Calorie: The amount of heat energy required to raise the temperature of 1 g of water by 1 degree C. Difference: Heat is the total internal energy (form of energy). Temperature is the measure of degree of hotness (average KE of molecules).",
+            "weightage": 2,
+            "why_important": "Fundamental definition pair (Heat).",
+            "frequency": "Consistent short definition (2018)",
+            "difficulty_importance": "Importance: \\ud83d\\udd36 (Medium), Difficulty: \\ud83d\\udfe2 (Easy/Definition)"
+          }
+        ]
+      },
+      {
+        "num": "4",
+        "marks": 9,
+        "type": "short",
+        "parts": [
+          {
+            "text": "Draw a neat, labelled ray diagram to show how a convex lens is used as a magnifying glass. State the position of the object relative to the lens. [4]",
+            "ans": "Object placed between the Optical Centre (O) and Principal Focus (F1). Image is magnified, virtual, erect on the same side.",
+            "weightage": 4,
+            "why_important": "Compulsory Ray Diagram (2024 School Prelims, 2025 Specimen Pattern).",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udfe1 (Moderate/Diagram)"
+          },
+          {
+            "text": "A motor runs on a $220 \\\\text{ V}$ supply and draws $5 \\\\text{ A}$. Calculate the cost of running it for $20 \\\\text{ hours}$ if the cost per unit is Rs. 5.50. [3]",
+            "ans": "Rs. 121.00",
+            "details": "Power $P = VI = 1100 \\\\text{ W} = 1.1 \\\\text{ kW}$. Energy $= 1.1 \\\\times 20 = 22 \\\\text{ kWh}$. Cost $= 22 \\\\times 5.50 = \\\\text{Rs. } 121.00$.",
+            "weightage": 3,
+            "why_important": "Standard numerical on commercial unit of energy (Electricity).",
+            "frequency": "Highly frequent numerical (2018, School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe1 (Moderate/Calculation)"
+          },
+          {
+            "text": "Differentiate between alpha-rays and gamma-rays in terms of their deflection in an electric field. [2]",
+            "ans": "Alpha-rays: Positively charged, deflected towards the negative plate. Gamma-rays: Uncharged, not deflected in an electric field.",
+            "weightage": 2,
+            "why_important": "Core comparison question (Modern Physics).",
+            "frequency": "Consistent short comparison (2025 Specimen)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Fact)"
+          }
+        ]
+      }
+    ]
+  },
+  "sectionB": {
+    "totalMarks": 40,
+    "instruction": "Attempt any four questions from this Section.",
+    "questions": [
+      {
+        "num": "5",
+        "focus": "Heat (Phase Change/SHC)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "Calculate the amount of heat energy required to convert $50 \\\\text{ g}$ of ice at $-10^{\\\\circ}\\\\text{C}$ to water at $50^{\\\\circ}\\\\text{C}$.",
+            "sub": [
+              "Heat required to raise temperature of ice to $0^{\\\\circ}\\\\text{C}$. [2]",
+              "Heat required to melt the ice at $0^{\\\\circ}\\\\text{C}$. [2]",
+              "Heat required to raise temperature of water to $50^{\\\\circ}\\\\text{C}$. [2]",
+              "Total heat energy required. [1]"
+            ],
+            "ans": "Total Heat: $28350 \\\\text{ J}$",
+            "details": "$Q_1 = 50 \\\\times 2.1 \\\\times 10 = 1050 \\\\text{ J}$. $Q_2 = 50 \\\\times 336 = 16800 \\\\text{ J}$. $Q_3 = 50 \\\\times 4.2 \\\\times 50 = 10500 \\\\text{ J}$. Total $= 28350 \\\\text{ J}$.",
+            "weightage": 7,
+            "why_important": "Challenging multi-step numerical on phase change and specific heat (Calorimetry).",
+            "frequency": "Compulsory numerical in Section B (2018, School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udd34 (Challenging/Application)"
+          },
+          {
+            "text": "Give one reason why a burn from steam at $100^{\\\\circ}\\\\text{C}$ is more severe than a burn from boiling water at $100^{\\\\circ}\\\\text{C}$. [3]",
+            "ans": "Steam contains extra heat energy called Specific Latent Heat of Vaporisation (2268 J/g), which it releases when it condenses. This sudden release of additional heat causes a more severe burn.",
+            "weightage": 3,
+            "why_important": "Standard reasoning question in Calorimetry.",
+            "frequency": "Highly frequent reasoning question (2017, School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe1 (Moderate/Reasoning)"
+          }
+        ]
+      },
+      {
+        "num": "6",
+        "focus": "Electricity (Circuits/Power)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "A wire of resistance $R$ is cut into four equal pieces. These pieces are then connected in parallel. Calculate the equivalent resistance of the combination in terms of $R$. [4]",
+            "ans": "$R/16$",
+            "details": "Each piece has resistance $R/4$. In parallel: $1/R_p = 4/(R/4) = 16/R$. So $R_p = R/16$.",
+            "weightage": 4,
+            "why_important": "Challenging application of resistance and circuit laws (Electricity).",
+            "frequency": "Standard advanced numerical/derivation (School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udd34 (Challenging/Application)"
+          },
+          {
+            "text": "What is the function of the main switch and the electricity meter in a household circuit? [4]",
+            "ans": "Main Switch: Allows the entire electrical supply to be cut off for safety. Electricity Meter: Measures the total electrical energy (in kWh) consumed.",
+            "weightage": 4,
+            "why_important": "Core theory on House Wiring (Electricity).",
+            "frequency": "Frequent theory question (2025 Specimen, School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Fact)"
+          },
+          {
+            "text": "The power is transmitted at high voltage. Give a reason. [2]",
+            "ans": "To reduce energy loss during transmission. Since $P_{\\\\text{loss}} = I^2 R$ and $I$ is low when $V$ is high, high voltage transmission reduces heat energy lost.",
+            "weightage": 2,
+            "why_important": "Standard reasoning question on Transformers/Transmission.",
+            "frequency": "Common reasoning question (School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe1 (Moderate/Reasoning)"
+          }
+        ]
+      },
+      {
+        "num": "7",
+        "focus": "Mechanics (W.E.P./Energy)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "A uniform plank of length $3 \\\\text{ m}$ is supported at its two ends, A and B. The reaction force at A is $50 \\\\text{ N}$, and the reaction force at B is $70 \\\\text{ N}$.",
+            "sub": [
+              "Calculate the total weight of the plank and the load on it. [2]",
+              "Determine the position of the centre of gravity of the plank and the load from end A. [3]"
+            ],
+            "ans": "1. $120 \\\\text{ N}$. 2. $1.75 \\\\text{ m}$ from A.",
+            "details": "Total Weight $= R_A + R_B = 120 \\\\text{ N}$. Taking moments about A: $120 \\\\times x = 70 \\\\times 3$. $x = 1.75 \\\\text{ m}$.",
+            "weightage": 5,
+            "why_important": "High-weightage application on Moments (determining C.G. position).",
+            "frequency": "Compulsory numerical in Section B (2017, School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udd34 (Challenging/Application)"
+          },
+          {
+            "text": "A stone of mass $2 \\\\text{ kg}$ is thrown vertically upwards with an initial velocity of $15 \\\\text{ m/s}$. Calculate the maximum height reached by the stone. (Use $g = 10 \\\\text{ m/s}^2$) [3]",
+            "ans": "$11.25 \\\\text{ m}$",
+            "details": "$h = v^2/(2g) = 225/20 = 11.25 \\\\text{ m}$.",
+            "weightage": 3,
+            "why_important": "Numerical application of Conservation of Energy (W.E.P.).",
+            "frequency": "Standard numerical (2018, School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe1 (Moderate/Calculation)"
+          },
+          {
+            "text": "Differentiate between Centripetal and Centrifugal force (two points). [2]",
+            "ans": "Centripetal: Real force, directed towards the centre. Centrifugal: Fictitious/Apparent force, directed away from the centre.",
+            "weightage": 2,
+            "why_important": "Core theory on forces in circular motion.",
+            "frequency": "Consistent short question (School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Definition)"
+          }
+        ]
+      },
+      {
+        "num": "8",
+        "focus": "Modern Physics (Radioactivity)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "State three properties of $\\\\alpha$-particles. Why do $\\\\alpha$-particles have high ionizing power? [5]",
+            "ans": "Properties: 1. Positively charged (+2e), high mass (4u). 2. Low penetrating power (stopped by paper). 3. Deflected by Electric/Magnetic fields. High Ionizing Power: Due to their large mass and high charge (+2e), they interact strongly with orbital electrons.",
+            "weightage": 5,
+            "why_important": "Core theory on properties of alpha-particles.",
+            "frequency": "Highly frequent theory question (2018, School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udfe1 (Moderate/Theory)"
+          },
+          {
+            "text": "The half-life of a radioactive isotope is $2 \\\\text{ hours}$. If the initial count rate is $480$ counts/min, what will the count rate be after $6 \\\\text{ hours}$? [3]",
+            "ans": "$60 \\\\text{ counts/min}$",
+            "details": "$n = 6/2 = 3$ half-lives. Final rate $= 480 \\\\times (1/2)^3 = 60 \\\\text{ counts/min}$.",
+            "weightage": 3,
+            "why_important": "Numerical application of the half-life concept.",
+            "frequency": "Standard numerical (2018, School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe1 (Moderate/Calculation)"
+          },
+          {
+            "text": "State the Law of Radioactive Disintegration. [2]",
+            "ans": "The rate of decay of a radioactive substance at any instant is directly proportional to the number of radioactive atoms present at that instant.",
+            "weightage": 2,
+            "why_important": "Core definition (Modern Physics).",
+            "frequency": "Consistent definition (School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Definition)"
+          }
+        ]
+      },
+      {
+        "num": "9",
+        "focus": "Light (Lenses/Defects)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "An object $5 \\\\text{ cm}$ high is placed $30 \\\\text{ cm}$ from a convex lens of focal length $10 \\\\text{ cm}$.",
+            "sub": [
+              "Calculate the position of the image. [3]",
+              "Calculate the height of the image. [3]"
+            ],
+            "ans": "Position: $+15 \\\\text{ cm}$. Height: $-2.5 \\\\text{ cm}$.",
+            "details": "$1/v = 1/10 + 1/(-30) = 2/30 = 1/15$. $v = +15 \\\\text{ cm}$. $m = -0.5$. $h_i = -2.5 \\\\text{ cm}$.",
+            "weightage": 6,
+            "why_important": "High-weightage numerical on the convex lens (Light).",
+            "frequency": "Compulsory numerical in Section B (2018, 2025 Specimen)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udd34 (Challenging/Calculation)"
+          },
+          {
+            "text": "Name the two main causes of Myopia. Draw a ray diagram to show how this defect is corrected. [4]",
+            "ans": "Causes: 1. Elongation of the eyeball. 2. Excessive curvature of the cornea/lens. Correction: Concave lens placed in front of the eye.",
+            "weightage": 4,
+            "why_important": "Core theory/diagram on Myopia/Hypermetropia.",
+            "frequency": "Highly frequent theory/diagram question (2023 Sample, School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe1 (Moderate/Theory/Diagram)"
+          }
+        ]
+      },
+      {
+        "num": "10",
+        "focus": "Mechanics (Pulleys/Levers)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "Draw a neat, labelled diagram of a single movable pulley system. State its MA and VR (ideal). [4]",
+            "ans": "Diagram: Single pulley with axle attached to Load. Rope runs under the pulley, one end fixed. MA = 2. VR = 2.",
+            "weightage": 4,
+            "why_important": "Compulsory diagram for the Pulley system (Mechanics).",
+            "frequency": "Highly frequent diagram question (2017, School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udfe1 (Moderate/Diagram)"
+          },
+          {
+            "text": "A block and tackle system has a VR of 5. It is used to lift a load of $1200 \\\\text{ N}$ with an effort of $300 \\\\text{ N}$. Calculate the percentage efficiency of the machine and the work wasted when the effort moves $10 \\\\text{ m}$. [6]",
+            "ans": "Efficiency: $80\\\\%$. Work Wasted: $600 \\\\text{ J}$.",
+            "details": "MA = 1200/300 = 4. Efficiency = (4/5) x 100 = 80%. Work Input = 3000 J. Work Output = 2400 J. Wasted = 600 J.",
+            "weightage": 6,
+            "why_important": "Challenging numerical on pulley system mechanics (Mechanics).",
+            "frequency": "Highly frequent numerical in Section B (2018, School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udd34 (Challenging/Application)"
+          }
+        ]
+      },
+      {
+        "num": "11",
+        "focus": "Sound (Echo/Pitch/Quality)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "Distinguish between pitch and quality of sound (two points each). [4]",
+            "ans": "Pitch: 1. Subjective property. 2. Determined by Frequency. Quality: 1. Subjective property. 2. Determined by the waveform (overtones/harmonics).",
+            "weightage": 4,
+            "why_important": "Core theory on Sound properties (essential distinction).",
+            "frequency": "Highly frequent theory question (2018, 2025 Specimen)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udfe1 (Moderate/Concept)"
+          },
+          {
+            "text": "A person standing between two parallel cliffs claps his hands. He hears the first echo after $1.5 \\\\text{ s}$ and the second echo after $3.5 \\\\text{ s}$. Calculate the distance between the two cliffs. (Speed of sound $= 340 \\\\text{ m/s}$) [4]",
+            "ans": "$850 \\\\text{ m}$",
+            "details": "Distance to closer cliff: $d_1 = (v \\\\times t_1)/2 = (340 \\\\times 1.5)/2 = 255 \\\\text{ m}$. Distance to farther cliff: $d_2 = (340 \\\\times 3.5)/2 = 595 \\\\text{ m}$. Total distance = $255 + 595 = 850 \\\\text{ m}$.",
+            "weightage": 4,
+            "why_important": "Challenging numerical on Echo (Sound).",
+            "frequency": "Standard numerical (2018, School Prelims)",
+            "difficulty_importance": "Importance: \\ud83d\\udc51 (Very High), Difficulty: \\ud83d\\udd34 (Challenging/Application)"
+          },
+          {
+            "text": "State two conditions necessary for an echo to be heard. [2]",
+            "ans": "1. The minimum distance between the source and the reflecting surface must be $17.2 \\\\text{ m}$ (for a time interval of at least $0.1 \\\\text{ s}$). 2. The reflecting surface must be large and hard.",
+            "weightage": 2,
+            "why_important": "Core conditions for Echo (Sound).",
+            "frequency": "Consistent short question (School Prelims)",
+            "difficulty_importance": "Importance: \\u2b50 (High), Difficulty: \\ud83d\\udfe2 (Easy/Fact)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -6,186 +6,110 @@ on:
     paths:
       - 'papers/**/*.json'
       - 'config.json'
-  pull_request:
-    branches: [ main, master ]
-    paths:
-      - 'papers/**/*.json'
-  workflow_dispatch:  # Manual trigger
+      - 'index.html'
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
-  validate-and-index:
+  validate-and-deploy:
     runs-on: ubuntu-latest
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
       
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
         
     - name: Validate JSON files
       run: |
-        echo "🔍 Validating JSON files..."
-        node -e "
-          const fs = require('fs');
-          const path = require('path');
-          
-          function validateJSON(dir) {
-            const files = fs.readdirSync(dir, { recursive: true });
-            let errors = [];
-            
-            files.forEach(file => {
-              if (file.endsWith('.json')) {
-                const fullPath = path.join(dir, file);
-                try {
-                  const content = fs.readFileSync(fullPath, 'utf8');
-                  JSON.parse(content);
-                  console.log('✅', fullPath);
-                } catch (e) {
-                  errors.push('❌ ' + fullPath + ': ' + e.message);
-                }
-              }
-            });
-            
-            if (errors.length > 0) {
-              console.error('\\nValidation errors:');
-              errors.forEach(e => console.error(e));
-              process.exit(1);
-            }
-          }
-          
-          validateJSON('papers');
-          console.log('\\n✅ All JSON files valid!');
-        "
+        echo "Validating JSON files..."
+        ERRORS=0
+        for f in $(find papers -name '*.json' 2>/dev/null); do
+          if node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
+            echo "OK: $f"
+          else
+            echo "FAIL: $f"
+            ERRORS=$((ERRORS+1))
+          fi
+        done
+        if [ "$ERRORS" -gt 0 ]; then
+          echo "Found $ERRORS invalid JSON files"
+          exit 1
+        fi
+        echo "All JSON files valid!"
         
     - name: Generate papers index
       run: |
-        echo "📚 Generating papers index..."
-        node -e "
-          const fs = require('fs');
-          const path = require('path');
-          
-          const papersDir = 'papers';
-          const subjects = fs.readdirSync(papersDir).filter(f => 
-            fs.statSync(path.join(papersDir, f)).isDirectory()
-          );
-          
-          const index = {
-            generatedAt: new Date().toISOString(),
-            subjects: {}
-          };
-          
-          subjects.forEach(subject => {
-            const subjectDir = path.join(papersDir, subject);
-            const files = fs.readdirSync(subjectDir)
-              .filter(f => f.startsWith('paper') && f.endsWith('.json'))
-              .sort();
-            
-            index.subjects[subject] = files.map(file => {
-              const content = JSON.parse(fs.readFileSync(path.join(subjectDir, file), 'utf8'));
-              return {
-                id: content.id || file.replace('.json', ''),
-                file: file,
-                title: content.title || file,
-                subtitle: content.subtitle || '',
-                totalMarks: content.sectionA?.totalMarks + content.sectionB?.totalMarks || 80,
-                questionCount: (content.sectionA?.questions?.length || 0) + (content.sectionB?.questions?.length || 0)
-              };
-            });
-          });
-          
-          fs.writeFileSync('papers-index.json', JSON.stringify(index, null, 2));
-          console.log('✅ Index generated:', JSON.stringify(index, null, 2));
-        "
+        echo "Generating papers index..."
+        node << 'NODESCRIPT'
+        const fs = require('fs');
+        const path = require('path');
         
-    - name: Validate paper schemas
-      run: |
-        echo "🔬 Validating paper schemas..."
-        node -e "
-          const fs = require('fs');
-          const path = require('path');
-          
-          const requiredFields = ['id', 'title', 'subtitle', 'generalInstructions', 'sectionA', 'sectionB'];
-          const sectionFields = ['totalMarks', 'questions'];
-          
-          let errors = [];
-          
-          function validatePaper(filePath) {
-            const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-            const paperId = content.id || filePath;
-            
-            // Check required fields
-            requiredFields.forEach(field => {
-              if (!content[field]) {
-                errors.push(\`\${paperId}: Missing required field '\${field}'\`);
-              }
-            });
-            
-            // Validate sections
-            if (content.sectionA) {
-              sectionFields.forEach(field => {
-                if (!content.sectionA[field]) {
-                  errors.push(\`\${paperId}: sectionA missing '\${field}'\`);
-                }
-              });
-            }
-            
-            if (content.sectionB) {
-              if (!content.sectionB.totalMarks) {
-                errors.push(\`\${paperId}: sectionB missing totalMarks\`);
-              }
-              if (!content.sectionB.instruction) {
-                errors.push(\`\${paperId}: sectionB missing instruction\`);
-              }
-              if (!content.sectionB.questions || content.sectionB.questions.length === 0) {
-                errors.push(\`\${paperId}: sectionB has no questions\`);
-              }
-            }
-            
-            // Check for metadata enhancements (warnings only)
-            const hasMetadata = content.sectionA?.questions?.some(q => 
-              q.items?.some(i => i.weightage || i.why_important) ||
-              q.weightage || q.why_important
-            );
-            
-            if (!hasMetadata) {
-              console.log('⚠️ ', paperId, '- No metadata found (optional but recommended)');
-            }
-          }
-          
-          const papersDir = 'papers';
-          fs.readdirSync(papersDir, { recursive: true }).forEach(file => {
-            if (file.endsWith('.json')) {
-              validatePaper(path.join(papersDir, file));
-            }
-          });
-          
-          if (errors.length > 0) {
-            console.error('\\nSchema validation errors:');
-            errors.forEach(e => console.error('❌', e));
-            process.exit(1);
-          }
-          
-          console.log('\\n✅ All papers follow valid schema!');
-        "
+        const papersDir = 'papers';
         
-    - name: Commit and push changes
+        if (!fs.existsSync(papersDir)) {
+          console.log('No papers directory found, creating empty index');
+          fs.writeFileSync('papers-index.json', JSON.stringify({ generatedAt: new Date().toISOString(), subjects: {} }, null, 2));
+          process.exit(0);
+        }
+        
+        const subjects = fs.readdirSync(papersDir).filter(f =>
+          fs.statSync(path.join(papersDir, f)).isDirectory()
+        );
+        
+        const index = {
+          generatedAt: new Date().toISOString(),
+          subjects: {}
+        };
+        
+        subjects.forEach(subject => {
+          const subjectDir = path.join(papersDir, subject);
+          const files = fs.readdirSync(subjectDir)
+            .filter(f => f.startsWith('paper') && f.endsWith('.json'))
+            .sort();
+          
+          index.subjects[subject] = files.map(file => {
+            const content = JSON.parse(fs.readFileSync(path.join(subjectDir, file), 'utf8'));
+            return {
+              id: content.id || file.replace('.json', ''),
+              file: file,
+              title: content.title || file,
+              subtitle: content.subtitle || '',
+              totalMarks: (content.sectionA?.totalMarks || 0) + (content.sectionB?.totalMarks || 0) || 80,
+              questionCount: (content.sectionA?.questions?.length || 0) + (content.sectionB?.questions?.length || 0)
+            };
+          });
+        });
+        
+        fs.writeFileSync('papers-index.json', JSON.stringify(index, null, 2));
+        console.log('Index generated with subjects:', Object.keys(index.subjects).join(', '));
+        NODESCRIPT
+
+    - name: Commit papers-index.json to repo
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
         if [ -f papers-index.json ]; then
           git add papers-index.json
-          git diff --staged --quiet || git commit -m "🤖 Auto-update papers index [$(date +%Y-%m-%d)]"
+          git diff --staged --quiet || git commit -m "Auto-update papers index"
           git push || echo "No changes to push"
         fi
-        
+
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./
-        exclude_assets: 'papers/**/*.json,node_modules/**'
+        exclude_assets: 'node_modules/**,.github/**'

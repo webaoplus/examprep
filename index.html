@@ -70,7 +70,13 @@
                     <p class="text-xs text-slate-400">ICSE Board Practice Papers</p>
                 </div>
             </div>
-            
+            <!-- Connection Status -->
+<div id="connectionStatus" class="fixed bottom-4 right-4 bg-white shadow-lg rounded-lg p-3 border border-slate-200 text-xs no-print transition-opacity opacity-0">
+    <span class="flex items-center gap-2">
+        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+        <span id="statusText">Connected</span>
+    </span>
+</div>
             <div class="flex gap-3 items-center flex-wrap justify-center">
                 <select id="subjectSelect" class="bg-slate-800 border border-slate-700 text-white text-sm rounded-lg p-2.5 min-w-[140px]">
                     <option value="">Select Subject...</option>
@@ -368,26 +374,110 @@
         // INITIALIZATION
         // ==========================================
         
-        async function init() {
+// ==========================================
+// ENHANCED INITIALIZATION WITH AUTO-DISCOVERY
+// ==========================================
+
+async function init() {
+    try {
+        // Try to load the auto-generated index first
+        const indexResponse = await fetch('papers-index.json');
+        if (indexResponse.ok) {
+            const index = await indexResponse.json();
+            console.log('📚 Loaded papers index:', index.generatedAt);
+            
+            // Build subjects from index
+            CONFIG.subjects = Object.keys(index.subjects).map(id => ({
+                id: id,
+                name: id.charAt(0).toUpperCase() + id.slice(1),
+                icon: getSubjectIcon(id),
+                color: getSubjectColor(id),
+                papers: index.subjects[id]
+            }));
+        } else {
+            // Fallback to config.json
+            await loadConfigFallback();
+        }
+    } catch (e) {
+        console.log('Using fallback configuration');
+        await loadConfigFallback();
+    }
+    
+    populateSubjectDropdown();
+    setupAutoRefresh();
+}
+
+async function loadConfigFallback() {
+    try {
+        const response = await fetch('config.json');
+        if (response.ok) {
+            const config = await response.json();
+            CONFIG.subjects = config.subjects.map(s => ({
+                ...s,
+                icon: s.icon || getSubjectIcon(s.id),
+                color: s.color || getSubjectColor(s.id)
+            }));
+        }
+    } catch (e) {
+        // Ultimate fallback
+        CONFIG.subjects = [
+            { id: "physics", name: "Physics", icon: "⚛️", color: "blue" },
+            { id: "mathematics", name: "Mathematics", icon: "📐", color: "purple" },
+            { id: "chemistry", name: "Chemistry", icon: "⚗️", color: "green" },
+            { id: "biology", name: "Biology", icon: "🧬", color: "amber" }
+        ];
+    }
+}
+
+function getSubjectIcon(id) {
+    const icons = {
+        physics: "⚛️",
+        mathematics: "📐",
+        chemistry: "⚗️",
+        biology: "🧬",
+        history: "📜",
+        geography: "🌍",
+        english: "📖",
+        computer: "💻"
+    };
+    return icons[id] || "📚";
+}
+
+function getSubjectColor(id) {
+    const colors = {
+        physics: "blue",
+        mathematics: "purple",
+        chemistry: "green",
+        biology: "amber",
+        history: "red",
+        geography: "cyan",
+        english: "pink",
+        computer: "indigo"
+    };
+    return colors[id] || "slate";
+}
+
+// Auto-refresh when papers are updated
+function setupAutoRefresh() {
+    // Check for index updates every 30 seconds (for development)
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        setInterval(async () => {
             try {
-                const response = await fetch(`${CONFIG.papersPath}/../config.json`);
+                const response = await fetch('papers-index.json?t=' + Date.now());
                 if (response.ok) {
-                    const config = await response.json();
-                    CONFIG.subjects = config.subjects;
-                } else {
-                    CONFIG.subjects = [
-                        { id: "physics", name: "Physics", icon: "⚛️", color: "blue" },
-                        { id: "mathematics", name: "Mathematics", icon: "📐", color: "purple" },
-                        { id: "chemistry", name: "Chemistry", icon: "⚗️", color: "green" },
-                        { id: "biology", name: "Biology", icon: "🧬", color: "amber" }
-                    ];
+                    const newIndex = await response.json();
+                    const currentTime = CONFIG.lastIndexTime;
+                    if (newIndex.generatedAt !== currentTime) {
+                        console.log('🔄 Papers index updated, reloading...');
+                        location.reload();
+                    }
                 }
             } catch (e) {
-                CONFIG.subjects = [{ id: "physics", name: "Physics", icon: "⚛️", color: "blue" }];
+                // Silent fail
             }
-            
-            populateSubjectDropdown();
-        }
+        }, 30000);
+    }
+}
 
         function populateSubjectDropdown() {
             const select = document.getElementById('subjectSelect');
@@ -407,50 +497,86 @@
         // LOAD PAPERS
         // ==========================================
         
-        async function loadSubjectPapers(subjectId) {
-            if (!subjectId) return;
-            
-            currentSubject = subjectId;
-            const paperSelect = document.getElementById('paperSelect');
-            paperSelect.innerHTML = '<option value="">Loading...</option>';
-            paperSelect.disabled = true;
+async function loadSubjectPapers(subjectId) {
+    if (!subjectId) return;
+    
+    currentSubject = subjectId;
+    const paperSelect = document.getElementById('paperSelect');
+    paperSelect.innerHTML = '<option value="">Loading...</option>';
+    paperSelect.disabled = true;
 
-            const papers = [];
-
-            for (let i = 1; i <= 10; i++) {
-                try {
-                    const response = await fetch(`${CONFIG.papersPath}/${subjectId}/paper${i}.json`);
-                    if (response.ok) {
-                        const paper = await response.json();
-                        papers.push(paper);
-                    }
-                } catch (e) {
-                    break;
+    const papers = [];
+    const subject = CONFIG.subjects.find(s => s.id === subjectId);
+    
+    // Try to use indexed papers first
+    if (subject?.papers) {
+        for (const paperInfo of subject.papers) {
+            try {
+                const response = await fetch(`${CONFIG.papersPath}/${subjectId}/${paperInfo.file}?t=${Date.now()}`);
+                if (response.ok) {
+                    const paper = await response.json();
+                    papers.push(paper);
                 }
+            } catch (e) {
+                console.warn(`Failed to load ${paperInfo.file}:`, e);
             }
-
-            if (papers.length === 0 && EMBEDDED_PAPERS[subjectId]) {
-                papers.push(...EMBEDDED_PAPERS[subjectId]);
-            }
-
-            paperSelect.innerHTML = '<option value="">Select Paper...</option>';
-            papers.forEach(paper => {
-                const option = document.createElement('option');
-                option.value = paper.id;
-                option.textContent = `${paper.title} - ${paper.subtitle}`;
-                option.dataset.paper = JSON.stringify(paper);
-                paperSelect.appendChild(option);
-            });
-
-            paperSelect.disabled = false;
-            paperSelect.addEventListener('change', (e) => {
-                const selected = e.target.selectedOptions[0];
-                if (selected.dataset.paper) {
-                    renderPaper(JSON.parse(selected.dataset.paper));
-                }
-            });
         }
+    }
+    
+    // Fallback: scan directory
+    if (papers.length === 0) {
+        for (let i = 1; i <= 10; i++) {
+            try {
+                const response = await fetch(`${CONFIG.papersPath}/${subjectId}/paper${i}.json?t=${Date.now()}`);
+                if (response.ok) {
+                    const paper = await response.json();
+                    papers.push(paper);
+                }
+            } catch (e) {
+                break;
+            }
+        }
+    }
 
+    // Final fallback: embedded papers
+    if (papers.length === 0 && EMBEDDED_PAPERS[subjectId]) {
+        papers.push(...EMBEDDED_PAPERS[subjectId]);
+    }
+
+    // Populate dropdown
+    paperSelect.innerHTML = '<option value="">Select Paper...</option>';
+    papers.forEach((paper, idx) => {
+        const option = document.createElement('option');
+        option.value = paper.id || `paper${idx + 1}`;
+        
+        // Enhanced display with metadata
+        const metaInfo = [];
+        if (paper.sectionA?.totalMarks && paper.sectionB?.totalMarks) {
+            metaInfo.push(`${paper.sectionA.totalMarks + paper.sectionB.totalMarks}M`);
+        }
+        if (paper.subtitle) {
+            const shortSub = paper.subtitle.split(',')[0];
+            metaInfo.push(shortSub);
+        }
+        
+        option.textContent = metaInfo.length > 0 
+            ? `${paper.title} — ${metaInfo.join(' | ')}`
+            : paper.title;
+            
+        option.dataset.paper = JSON.stringify(paper);
+        paperSelect.appendChild(option);
+    });
+
+    paperSelect.disabled = false;
+    
+    // Store for comparison
+    paperSelect.onchange = (e) => {
+        const selected = e.target.selectedOptions[0];
+        if (selected?.dataset?.paper) {
+            renderPaper(JSON.parse(selected.dataset.paper));
+        }
+    };
+}
         // ==========================================
         // RENDER PAPER
         // ==========================================

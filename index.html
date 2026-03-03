@@ -8,6 +8,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="if(typeof renderMathInElement==='function'){renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});}"></script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
         .paper-font { font-family: 'Merriweather', serif; }
@@ -515,6 +518,11 @@ async function loadSubjectPapers(subjectId) {
                 const response = await fetch(`${CONFIG.papersPath}/${subjectId}/${paperInfo.file}?t=${Date.now()}`);
                 if (response.ok) {
                     const paper = await response.json();
+                    // Auto-fix nested sectionB
+                    if (!paper.sectionB && paper.sectionA && paper.sectionA.sectionB) {
+                        paper.sectionB = paper.sectionA.sectionB;
+                        delete paper.sectionA.sectionB;
+                    }
                     papers.push(paper);
                 }
             } catch (e) {
@@ -530,6 +538,11 @@ async function loadSubjectPapers(subjectId) {
                 const response = await fetch(`${CONFIG.papersPath}/${subjectId}/paper${i}.json?t=${Date.now()}`);
                 if (response.ok) {
                     const paper = await response.json();
+                    // Auto-fix nested sectionB
+                    if (!paper.sectionB && paper.sectionA && paper.sectionA.sectionB) {
+                        paper.sectionB = paper.sectionA.sectionB;
+                        delete paper.sectionA.sectionB;
+                    }
                     papers.push(paper);
                 }
             } catch (e) {
@@ -552,7 +565,7 @@ async function loadSubjectPapers(subjectId) {
         // Enhanced display with metadata
         const metaInfo = [];
         if (paper.sectionA?.totalMarks && paper.sectionB?.totalMarks) {
-            metaInfo.push(`${paper.sectionA.totalMarks + paper.sectionB.totalMarks}M`);
+            metaInfo.push(`${(paper.sectionA?.totalMarks || 0) + (paper.sectionB?.totalMarks || 0)}M`);
         }
         if (paper.subtitle) {
             const shortSub = paper.subtitle.split(',')[0];
@@ -582,6 +595,14 @@ async function loadSubjectPapers(subjectId) {
         // ==========================================
         
         function renderPaper(paper) {
+            try {
+            // Auto-fix: if sectionB is nested inside sectionA, move it
+            if (!paper.sectionB && paper.sectionA && paper.sectionA.sectionB) {
+                paper.sectionB = paper.sectionA.sectionB;
+                delete paper.sectionA.sectionB;
+                console.log('Auto-fixed: moved sectionB from inside sectionA');
+            }
+
             currentPaper = paper;
             document.getElementById('welcomeState').classList.add('hidden');
             document.getElementById('papersContainer').classList.remove('hidden');
@@ -629,11 +650,12 @@ async function loadSubjectPapers(subjectId) {
 
             html += `</div></section>`;
 
+            if (paper.sectionB && paper.sectionB.questions) {
             html += `
                 <section>
                     <h4 class="font-bold text-xl mb-6 text-slate-900 border-b-2 border-slate-800 inline-block pr-4">
-                        SECTION B (${paper.sectionB.totalMarks} Marks)
-                        <span class="text-sm font-normal text-slate-600 block mt-1">(${paper.sectionB.instruction})</span>
+                        SECTION B (${paper.sectionB.totalMarks || 40} Marks)
+                        <span class="text-sm font-normal text-slate-600 block mt-1">(${paper.sectionB.instruction || 'Attempt any four questions.'})</span>
                     </h4>
                     <div class="space-y-8">
             `;
@@ -642,11 +664,31 @@ async function loadSubjectPapers(subjectId) {
                 html += renderQuestion(q, 'B');
             });
 
-            html += `</div></section></div></article>`;
+            html += `</div></section>`;
+            }
+
+            html += `</div></article>`;
             container.innerHTML = html;
             
             answersVisible = false;
             document.getElementById('toggleText').innerText = "Show Answers";
+            // Re-render LaTeX math if KaTeX is available
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(container, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+            } catch(err) {
+                console.error('Error rendering paper:', err);
+                const container = document.getElementById('papersContainer');
+                container.innerHTML = '<div class="bg-red-50 border border-red-200 rounded-lg p-6 text-center"><h3 class="text-red-800 font-bold mb-2">Error Loading Paper</h3><p class="text-red-600 text-sm">' + err.message + '</p></div>';
+                container.classList.remove('hidden');
+                document.getElementById('welcomeState').classList.add('hidden');
+            }
         }
 
         function renderQuestion(q, section) {
@@ -840,6 +882,7 @@ async function loadSubjectPapers(subjectId) {
                     y = height - 50;
                 }
                 
+                if (currentPaper.sectionB && currentPaper.sectionB.questions) {
                 addText(`SECTION B (${currentPaper.sectionB.totalMarks} Marks)`, 14, true);
                 addText(`(${currentPaper.sectionB.instruction})`, 10, false);
                 y -= 10;
@@ -871,6 +914,7 @@ async function loadSubjectPapers(subjectId) {
                     }
                     y -= 15;
                 });
+                } // end sectionB PDF check
 
                 const pdfBytes = await pdfDoc.save();
                 download(pdfBytes, `${currentPaper.id}_${currentSubject}.pdf`, "application/pdf");

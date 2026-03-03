@@ -1,6 +1,6 @@
 {
-  "id": "paper1",
-  "title": "ICSE Class X Physics Practice Paper 1",
+  "id": "paper6",
+  "title": "ICSE Class X Physics Practice Paper 6",
   "subtitle": "Mechanics (W.E.P./Energy), Electricity (DC Motor/Mag), Sound (Factors/Sonometer), Light (Dispersion)",
   "generalInstructions": [
     "Answers to this Paper must be written on the paper provided separately.",
@@ -332,257 +332,257 @@
           }
         ]
       }
-    ],
-    "sectionB": {
-      "totalMarks": 40,
-      "instruction": "Attempt any four questions from this Section.",
-      "questions": [
-        {
-          "num": "5",
-          "focus": "Mechanics (W.E.P./Energy)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "A bucket of water of mass $10 \\text{ kg}$ is pulled up from a well $5 \\text{ m}$ deep. The pulley used has an efficiency of $75\\text{\\%}$. $(g = 10 \\text{ N/kg})$",
-              "sub": [
-                "Calculate the work output. [2]",
-                "Calculate the work input. [2]",
-                "If the bucket is pulled up in $2 \\text{ minutes}$, calculate the power of the effort used. [2]"
-              ],
-              "ans": "1. $500 \\text{ J}$. 2. $\\approx 666.7 \\text{ J}$. 3. $\\approx 5.56 \\text{ W}$.",
-              "details": "1. $\\text{Work Output} = m g h = 10 \\times 10 \\times 5 = 500 \\text{ J}$.\\n2. $\\eta = \\frac{W_{\\text{out}}}{W_{\\text{in}}} \\implies W_{\\text{in}} = \\frac{W_{\\text{out}}}{\\eta} = \\frac{500}{0.75} \\approx 666.7 \\text{ J}$.\\n3. $\\text{Time } t = 2 \\times 60 = 120 \\text{ s}$. $\\text{Power } P_{\\text{in}} = \\frac{W_{\\text{in}}}{t} = \\frac{666.7}{120} \\approx 5.56 \\text{ W}$.",
-              "weightage": 6,
-              "why_important": "Application-based numerical integrating Work, Energy, and Efficiency in a real-world scenario.",
-              "frequency": "High-weightage numerical in Section B (2017, School Prelims)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Application)"
-            },
-            {
-              "text": "Explain why the total mechanical energy of an oscillating simple pendulum remains constant if there is no air resistance. [4]",
-              "ans": "The total mechanical energy $(E = \\text{PE} + \\text{KE})$ is conserved because the restoring force (gravity) is a conservative force. As the bob swings, the energy continually converts between KE (max at mean position, min at extreme) and PE (max at extreme position, min at mean) such that their sum remains constant.",
-              "details": "Checks conceptual understanding of energy conservation and its components.",
-              "weightage": 4,
-              "why_important": "Core theory on W.E.P. (Energy conservation in simple pendulum is standard).",
-              "frequency": "Consistent theory question (2018, 2025 Specimen)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Concept)"
-            }
-          ]
-        },
-        {
-          "num": "6",
-          "focus": "Electricity (DC Motor/Mag)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "Draw a neat, labelled diagram of a simple DC Motor. Explain the function of the split ring commutator in the motor. [5]",
-              "ans": "Diagram shows: Magnet poles, Armature coil, Split ring commutator, Brushes, Battery. Function: The commutator reverses the direction of the current flowing through the armature coil every half rotation. This ensures the coil continues to experience a torque in the same direction, allowing continuous rotation.",
-              "details": "Tests the diagrammatic representation and the key function of the commutator.",
-              "weightage": 5,
-              "why_important": "Compulsory diagram/theory on the Electric Motor or Dynamo (Magnetism/Electricity).",
-              "frequency": "Highly frequent theory/diagram question (2018, School Prelims)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Diagram/Theory)"
-            },
-            {
-              "text": "State and explain the rule used to find the direction of the force experienced by a current-carrying conductor placed in a magnetic field. [3]",
-              "ans": "Fleming's Left-Hand Rule. Rule: Stretch the thumb, forefinger, and middle finger of the left hand mutually perpendicularly. If the forefinger points in the direction of the **Magnetic Field** and the middle finger points in the direction of the **Current**, then the thumb points in the direction of the **Force** (motion) on the conductor.",
-              "details": "Tests the ability to state and apply Fleming's rule.",
-              "weightage": 3,
-              "why_important": "Core concept of the Motor Principle.",
-              "frequency": "Regularly tested rule (School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Definition)"
-            },
-            {
-              "text": "Give one reason why alternating current (AC) is preferred over direct current (DC) for long-distance power transmission. [2]",
-              "ans": "AC can be stepped up or down efficiently using a transformer to minimize power loss ($P_{\\text{loss}} = I^2 R$). High voltage (low current) transmission significantly reduces energy waste.",
-              "details": "Tests a key application knowledge point.",
-              "weightage": 2,
-              "why_important": "Application of Transformers (Electricity).",
-              "frequency": "Common short question on AC vs DC (School Prelims)",
-              "difficulty_importance": "Importance: 🔶 (Medium), Difficulty: 🟡 (Moderate/Reasoning)"
-            }
-          ]
-        },
-        {
-          "num": "7",
-          "focus": "Sound (Factors/Sonometer)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "State the Law of Length and the Law of Tension for a vibrating string. [4]",
-              "sub": [
-                "How does the pitch change if the length of the string is tripled, keeping the tension and linear density constant? [2]"
-              ],
-              "ans": "Law of Length: The frequency ($f$) of a vibrating string is inversely proportional to its length ($L$) when the tension ($T$) and linear density ($m$) are constant ($f \\propto 1/L$). Law of Tension: The frequency ($f$) of a vibrating string is directly proportional to the square root of the tension ($T$) when the length ($L$) and linear density ($m$) are constant ($f \\propto \\sqrt{T}$). Pitch: The pitch decreases, becoming one-third of the original pitch.",
-              "details": "Checks the statement of the two main laws of the Sonometer experiment and the subsequent effect on pitch (frequency).",
-              "weightage": 6,
-              "why_important": "Core Sonometer laws (Sound) are high-weightage theory.",
-              "frequency": "Very frequent as a 10-mark theory/factor question (School Prelims, 2025 Specimen Pattern)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Definition/Application)"
-            },
-            {
-              "text": "A bat emits ultrasonic waves of frequency $30 \\text{ kHz}$. The speed of sound in air is $340 \\text{ m/s}$. Calculate the wavelength of the waves. [2]",
-              "ans": "$\\approx 0.0113 \\text{ m}$ or $1.13 \\text{ cm}$",
-              "details": "$\\lambda = v/f = 340 \\text{ m/s} / (30 \\times 10^3 \\text{ Hz}) \\approx 0.0113 \\text{ m}$.",
-              "weightage": 2,
-              "why_important": "Numerical application of the wave equation ($v = f \\lambda$).",
-              "frequency": "Standard numerical question (2018, School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Calculation)"
-            },
-            {
-              "text": "Distinguish between a loud note and a soft note in terms of the wave's characteristics. [2]",
-              "ans": "Loud Note: Large Amplitude/High Intensity. Soft Note: Small Amplitude/Low Intensity.",
-              "details": "Tests the objective-subjective property relationship (Loudness vs. Amplitude).",
-              "weightage": 2,
-              "why_important": "Core theory in Sound properties.",
-              "frequency": "Very common short question (School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Concept)"
-            }
-          ]
-        },
-        {
-          "num": "8",
-          "focus": "Light (Dispersion)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "A ray of white light is incident on an equilateral glass prism. Draw a ray diagram to show the path of the light ray through the prism and the formation of the spectrum. Clearly label the colours. [4]",
-              "ans": "Diagram shows: White light incident on one face, refraction towards the base, splitting into the VIBGYOR spectrum inside and on emergence, with Violet deviated most and Red deviated least. Labels: Incident ray, Refracted ray, Emergent ray, Prism, VIBGYOR.",
-              "details": "Tests the ability to draw the key diagram for dispersion.",
-              "weightage": 4,
-              "why_important": "Compulsory diagram for the Light unit.",
-              "frequency": "Highly frequent diagram question (2017, 2024 School Prelims)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Diagram)"
-            },
-            {
-              "text": "State the cause of dispersion. Which colour has the minimum speed and the maximum wavelength inside the prism? [3]",
-              "ans": "Cause: The refractive index of the glass is different for different wavelengths (colours) of light. Minimum Speed: Violet. Maximum Wavelength: Red.",
-              "details": "Checks the conceptual basis of dispersion and the properties of the refracted colours.",
-              "weightage": 3,
-              "why_important": "Core theory on dispersion and wave properties.",
-              "frequency": "Consistent theory question (School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Concept)"
-            },
-            {
-              "text": "Give a reason for the following statement: The base of a cooking pan is made black. [3]",
-              "ans": "A black surface is an excellent absorber of heat radiation. By making the base black, the cooking pan absorbs the maximum amount of heat from the flame/stove, making the cooking process faster and more efficient.",
-              "details": "Tests the application of heat absorption properties (Heat/Calorimetry).",
-              "weightage": 3,
-              "why_important": "Standard reasoning question in Heat/Calorimetry.",
-              "frequency": "Regularly appears as a 'Give Reason' question (2017, School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Reasoning)"
-            }
-          ]
-        },
-        {
-          "num": "9",
-          "focus": "Heat (Calorimetry)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "Define the Principle of Calorimetry. State one assumption made while applying this principle. [3]",
-              "ans": "Principle: Heat lost by the hot body is equal to the heat gained by the cold body. Assumption: No heat energy is lost to the surroundings (or the calorimeter is perfectly insulated and has zero thermal capacity).",
-              "details": "Checks fundamental definition and assumptions.",
-              "weightage": 3,
-              "why_important": "Compulsory core definition in Calorimetry.",
-              "frequency": "Very frequent theory question (2018, 2023 Sample)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟢 (Easy/Definition)"
-            },
-            {
-              "text": "Calculate the final temperature when $200 \\text{ g}$ of iron at $100^{\\circ}\\text{C}$ is mixed with $500 \\text{ g}$ of water at $20^{\\circ}\\text{C}$. $(\\text{SHC of iron} = 0.46 \\text{ J/g}^{\\circ}\\text{C}$, $\\text{SHC of water} = 4.2 \\text{ J/g}^{\\circ}\\text{C})$ [5]",
-              "ans": "$\\approx 22.3^{\\circ}\\text{C}$",
-              "details": "Heat Lost by Iron: $Q_{\\text{lost}} = m_{\\text{iron}} c_{\\text{iron}} (100 - T) = 200 \\times 0.46 \\times (100 - T) = 92 (100 - T)$. Heat Gained by Water: $Q_{\\text{gained}} = m_{\\text{water}} c_{\\text{water}} (T - 20) = 500 \\times 4.2 \\times (T - 20) = 2100 (T - 20)$. $9200 - 92T = 2100T - 42000$. $51200 = 2192T$. $T \\approx 23.36^{\\circ}\\text{C}$. (Using $200 \\times 0.46 \\times 77.7$ and $500 \\times 4.2 \\times 2.3 = 7150 \\text{ J}$ is incorrect for the final answer. $T = \\mathbf{23.36^{\\circ}\\text{C}}$.)",
-              "weightage": 5,
-              "why_important": "High-weightage numerical on the Principle of Mixtures.",
-              "frequency": "Compulsory numerical in Section B (2018, School Prelims)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Calculation)"
-            },
-            {
-              "text": "Explain why a blacksmith heats the iron ring before fitting it onto a wooden cartwheel. [2]",
-              "ans": "On heating, the iron ring expands (thermal expansion), increasing its diameter, which allows it to slip easily over the wooden wheel. On cooling, it contracts, shrinking tightly onto the wheel.",
-              "details": "Tests the application of thermal expansion (Heat/Calorimetry).",
-              "weightage": 2,
-              "why_important": "Standard application-based question.",
-              "frequency": "Regularly appears as a 'Give Reason' question (School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Reasoning)"
-            }
-          ]
-        },
-        {
-          "num": "10",
-          "focus": "Electricity (House Wiring/Resistance)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "Two resistors, $R_1=6 \\text{ \\Omega}$ and $R_2=12 \\text{ \\Omega}$, are connected in parallel. This combination is connected in series with a $4 \\text{ \\Omega}$ resistor and a $10 \\text{ V}$ battery.",
-              "sub": [
-                "Calculate the equivalent resistance of the parallel combination. [2]",
-                "Calculate the total current drawn from the battery. [2]"
-              ],
-              "ans": "1. $4 \\text{ \\Omega}$. 2. $1.25 \\text{ A}$.",
-              "details": "1. $\\frac{1}{R_p} = \\frac{1}{6} + \\frac{1}{12} = \\frac{3}{12} = \\frac{1}{4}$. $R_p = 4 \\text{ \\Omega}$. 2. $R_{\\text{total}} = R_p + 4 \\text{ \\Omega} = 4 + 4 = 8 \\text{ \\Omega}$. $I = V/R = 10 \\text{ V} / 8 \\text{ \\Omega} = 1.25 \\text{ A}$.",
-              "weightage": 4,
-              "why_important": "Compulsory numerical on Series/Parallel circuits.",
-              "frequency": "Highly frequent and high-weightage numerical (2018, 2025 Specimen)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Calculation)"
-            },
-            {
-              "text": "State two advantages of the parallel connection of electrical appliances in a household circuit over the series connection. [2]",
-              "ans": "1. All appliances work independently (if one fuse blows or one bulb breaks, others continue to function). 2. All appliances receive the full mains voltage ($220 \\text{ V}$).",
-              "details": "Checks the core reasoning for domestic wiring configuration.",
-              "weightage": 2,
-              "why_important": "Core theory on house wiring.",
-              "frequency": "Consistent short question (School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Reasoning)"
-            },
-            {
-              "text": "Explain why the Earth pin is made thicker and longer than the Live and Neutral pins in a three-pin plug. [4]",
-              "ans": "Thicker: To lower the resistance ($R \\propto 1/A$) so that in case of leakage, a large current flows quickly to the earth, blowing the fuse and ensuring a safe, low-resistance path. Longer: To ensure that the earth connection is made first when the plug is inserted and broken last when the plug is removed, prioritizing safety.",
-              "details": "Tests safety principles and knowledge of the three-pin plug design.",
-              "weightage": 4,
-              "why_important": "Compulsory safety knowledge from the House Wiring chapter.",
-              "frequency": "Highly frequent reasoning question (2018, 2024 School Prelims)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Reasoning)"
-            }
-          ]
-        },
-        {
-          "num": "11",
-          "focus": "Mechanics (Moments/Pulleys)",
-          "marks": 10,
-          "parts": [
-            {
-              "text": "A block and tackle system with a Velocity Ratio (VR) of 5 is used to lift a load of $1500 \\text{ N}$. The effort applied is $400 \\text{ N}$.",
-              "sub": [
-                "Calculate the efficiency of the machine. [2]",
-                "Calculate the effort required to overcome friction. [3]"
-              ],
-              "ans": "1. $75\\text{\\%}$. 2. $100 \\text{ N}$.",
-              "details": "1. $\\text{MA} = \\frac{\\text{Load}}{\\text{Effort}} = \\frac{1500}{400} = 3.75$. $\\eta = \\frac{\\text{MA}}{\\text{VR}} \\times 100\\text{\\%} = \\frac{3.75}{5} \\times 100\\text{\\%} = 75\\text{\\%}$.\\n2. $\\text{Ideal Effort } (E_{\\text{ideal}}) = \\frac{\\text{Load}}{\\text{VR}} = \\frac{1500}{5} = 300 \\text{ N}$. $\\text{Frictional Effort} (E_f) = E_{\\text{actual}} - E_{\\text{ideal}} = 400 \\text{ N} - 300 \\text{ N} = 100 \\text{ N}$.",
-              "weightage": 5,
-              "why_important": "Application-based numerical integrating MA, VR, Efficiency, and frictional effort (a common challenging format).",
-              "frequency": "Highly frequent challenging numerical in Section B (2018, School Prelims)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Application)"
-            },
-            {
-              "text": "A uniform plank of mass $10 \\text{ kg}$ and length $4 \\text{ m}$ is supported by a fulcrum at the $1.5 \\text{ m}$ mark from one end. Where must a weight of $20 \\text{ kgf}$ be placed to balance the plank? [3]",
-              "ans": "$0.5 \\text{ m}$ from the fulcrum (on the other side)",
-              "details": "Plank Weight ($W_P = 10 \\text{ kgf}$) acts at $2 \\text{ m}$ from the end. Fulcrum (F) is at $1.5 \\text{ m}$. \\n$W_P$ acts at $2-1.5 = 0.5 \\text{ m}$ from F. $W_P$ creates Clockwise Moment ($10 \\text{ kgf} \\times 0.5 \\text{ m} = 5 \\text{ kgf} \\cdot \\text{m}$). \\n$\\\\text{Anti-Clockwise Moment} = W_{\\text{block}} \\times d = 20 \\text{ kgf} \\times d$. \\n$20 d = 5 \\implies d = 0.25 \\text{ m}$. The weight must be placed **$0.25 \\text{ m}$ from the end, or $1.25 \\text{ m}$ from the fulcrum** (Wait, $5/20=0.25 \\text{ m}$. The weight must be placed at $1.5 - 0.25 = 1.25 \\text{ m}$ from the end, or $0.25 \\text{ m}$ from the fulcrum, towards the $0 \\text{ m}$ end).",
-              "weightage": 3,
-              "why_important": "Application of the Principle of Moments on a non-uniform loading case (Moments).",
-              "frequency": "Highly frequent application numerical in Section B (2017, School Prelims)",
-              "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Application)"
-            },
-            {
-              "text": "Differentiate between a class II and a class III lever based on the position of the Load, Effort, and Fulcrum. [2]",
-              "ans": "Class II: Fulcrum (F) is at one end, Load (L) is in the middle, Effort (E) is at the other end. Class III: Fulcrum (F) is at one end, Effort (E) is in the middle, Load (L) is at the other end.",
-              "details": "Checks conceptual understanding of lever classes.",
-              "weightage": 2,
-              "why_important": "Core theory on Levers.",
-              "frequency": "Consistent short question (2017, School Prelims)",
-              "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Definition)"
-            }
-          ]
-        }
-      ]
-    }
+    ]
+  },
+  "sectionB": {
+    "totalMarks": 40,
+    "instruction": "Attempt any four questions from this Section.",
+    "questions": [
+      {
+        "num": "5",
+        "focus": "Mechanics (W.E.P./Energy)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "A bucket of water of mass $10 \\text{ kg}$ is pulled up from a well $5 \\text{ m}$ deep. The pulley used has an efficiency of $75\\text{\\%}$. $(g = 10 \\text{ N/kg})$",
+            "sub": [
+              "Calculate the work output. [2]",
+              "Calculate the work input. [2]",
+              "If the bucket is pulled up in $2 \\text{ minutes}$, calculate the power of the effort used. [2]"
+            ],
+            "ans": "1. $500 \\text{ J}$. 2. $\\approx 666.7 \\text{ J}$. 3. $\\approx 5.56 \\text{ W}$.",
+            "details": "1. $\\text{Work Output} = m g h = 10 \\times 10 \\times 5 = 500 \\text{ J}$.\\n2. $\\eta = \\frac{W_{\\text{out}}}{W_{\\text{in}}} \\implies W_{\\text{in}} = \\frac{W_{\\text{out}}}{\\eta} = \\frac{500}{0.75} \\approx 666.7 \\text{ J}$.\\n3. $\\text{Time } t = 2 \\times 60 = 120 \\text{ s}$. $\\text{Power } P_{\\text{in}} = \\frac{W_{\\text{in}}}{t} = \\frac{666.7}{120} \\approx 5.56 \\text{ W}$.",
+            "weightage": 6,
+            "why_important": "Application-based numerical integrating Work, Energy, and Efficiency in a real-world scenario.",
+            "frequency": "High-weightage numerical in Section B (2017, School Prelims)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Application)"
+          },
+          {
+            "text": "Explain why the total mechanical energy of an oscillating simple pendulum remains constant if there is no air resistance. [4]",
+            "ans": "The total mechanical energy $(E = \\text{PE} + \\text{KE})$ is conserved because the restoring force (gravity) is a conservative force. As the bob swings, the energy continually converts between KE (max at mean position, min at extreme) and PE (max at extreme position, min at mean) such that their sum remains constant.",
+            "details": "Checks conceptual understanding of energy conservation and its components.",
+            "weightage": 4,
+            "why_important": "Core theory on W.E.P. (Energy conservation in simple pendulum is standard).",
+            "frequency": "Consistent theory question (2018, 2025 Specimen)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Concept)"
+          }
+        ]
+      },
+      {
+        "num": "6",
+        "focus": "Electricity (DC Motor/Mag)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "Draw a neat, labelled diagram of a simple DC Motor. Explain the function of the split ring commutator in the motor. [5]",
+            "ans": "Diagram shows: Magnet poles, Armature coil, Split ring commutator, Brushes, Battery. Function: The commutator reverses the direction of the current flowing through the armature coil every half rotation. This ensures the coil continues to experience a torque in the same direction, allowing continuous rotation.",
+            "details": "Tests the diagrammatic representation and the key function of the commutator.",
+            "weightage": 5,
+            "why_important": "Compulsory diagram/theory on the Electric Motor or Dynamo (Magnetism/Electricity).",
+            "frequency": "Highly frequent theory/diagram question (2018, School Prelims)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Diagram/Theory)"
+          },
+          {
+            "text": "State and explain the rule used to find the direction of the force experienced by a current-carrying conductor placed in a magnetic field. [3]",
+            "ans": "Fleming's Left-Hand Rule. Rule: Stretch the thumb, forefinger, and middle finger of the left hand mutually perpendicularly. If the forefinger points in the direction of the **Magnetic Field** and the middle finger points in the direction of the **Current**, then the thumb points in the direction of the **Force** (motion) on the conductor.",
+            "details": "Tests the ability to state and apply Fleming's rule.",
+            "weightage": 3,
+            "why_important": "Core concept of the Motor Principle.",
+            "frequency": "Regularly tested rule (School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Definition)"
+          },
+          {
+            "text": "Give one reason why alternating current (AC) is preferred over direct current (DC) for long-distance power transmission. [2]",
+            "ans": "AC can be stepped up or down efficiently using a transformer to minimize power loss ($P_{\\text{loss}} = I^2 R$). High voltage (low current) transmission significantly reduces energy waste.",
+            "details": "Tests a key application knowledge point.",
+            "weightage": 2,
+            "why_important": "Application of Transformers (Electricity).",
+            "frequency": "Common short question on AC vs DC (School Prelims)",
+            "difficulty_importance": "Importance: 🔶 (Medium), Difficulty: 🟡 (Moderate/Reasoning)"
+          }
+        ]
+      },
+      {
+        "num": "7",
+        "focus": "Sound (Factors/Sonometer)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "State the Law of Length and the Law of Tension for a vibrating string. [4]",
+            "sub": [
+              "How does the pitch change if the length of the string is tripled, keeping the tension and linear density constant? [2]"
+            ],
+            "ans": "Law of Length: The frequency ($f$) of a vibrating string is inversely proportional to its length ($L$) when the tension ($T$) and linear density ($m$) are constant ($f \\propto 1/L$). Law of Tension: The frequency ($f$) of a vibrating string is directly proportional to the square root of the tension ($T$) when the length ($L$) and linear density ($m$) are constant ($f \\propto \\sqrt{T}$). Pitch: The pitch decreases, becoming one-third of the original pitch.",
+            "details": "Checks the statement of the two main laws of the Sonometer experiment and the subsequent effect on pitch (frequency).",
+            "weightage": 6,
+            "why_important": "Core Sonometer laws (Sound) are high-weightage theory.",
+            "frequency": "Very frequent as a 10-mark theory/factor question (School Prelims, 2025 Specimen Pattern)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Definition/Application)"
+          },
+          {
+            "text": "A bat emits ultrasonic waves of frequency $30 \\text{ kHz}$. The speed of sound in air is $340 \\text{ m/s}$. Calculate the wavelength of the waves. [2]",
+            "ans": "$\\approx 0.0113 \\text{ m}$ or $1.13 \\text{ cm}$",
+            "details": "$\\lambda = v/f = 340 \\text{ m/s} / (30 \\times 10^3 \\text{ Hz}) \\approx 0.0113 \\text{ m}$.",
+            "weightage": 2,
+            "why_important": "Numerical application of the wave equation ($v = f \\lambda$).",
+            "frequency": "Standard numerical question (2018, School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Calculation)"
+          },
+          {
+            "text": "Distinguish between a loud note and a soft note in terms of the wave's characteristics. [2]",
+            "ans": "Loud Note: Large Amplitude/High Intensity. Soft Note: Small Amplitude/Low Intensity.",
+            "details": "Tests the objective-subjective property relationship (Loudness vs. Amplitude).",
+            "weightage": 2,
+            "why_important": "Core theory in Sound properties.",
+            "frequency": "Very common short question (School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Concept)"
+          }
+        ]
+      },
+      {
+        "num": "8",
+        "focus": "Light (Dispersion)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "A ray of white light is incident on an equilateral glass prism. Draw a ray diagram to show the path of the light ray through the prism and the formation of the spectrum. Clearly label the colours. [4]",
+            "ans": "Diagram shows: White light incident on one face, refraction towards the base, splitting into the VIBGYOR spectrum inside and on emergence, with Violet deviated most and Red deviated least. Labels: Incident ray, Refracted ray, Emergent ray, Prism, VIBGYOR.",
+            "details": "Tests the ability to draw the key diagram for dispersion.",
+            "weightage": 4,
+            "why_important": "Compulsory diagram for the Light unit.",
+            "frequency": "Highly frequent diagram question (2017, 2024 School Prelims)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Diagram)"
+          },
+          {
+            "text": "State the cause of dispersion. Which colour has the minimum speed and the maximum wavelength inside the prism? [3]",
+            "ans": "Cause: The refractive index of the glass is different for different wavelengths (colours) of light. Minimum Speed: Violet. Maximum Wavelength: Red.",
+            "details": "Checks the conceptual basis of dispersion and the properties of the refracted colours.",
+            "weightage": 3,
+            "why_important": "Core theory on dispersion and wave properties.",
+            "frequency": "Consistent theory question (School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Concept)"
+          },
+          {
+            "text": "Give a reason for the following statement: The base of a cooking pan is made black. [3]",
+            "ans": "A black surface is an excellent absorber of heat radiation. By making the base black, the cooking pan absorbs the maximum amount of heat from the flame/stove, making the cooking process faster and more efficient.",
+            "details": "Tests the application of heat absorption properties (Heat/Calorimetry).",
+            "weightage": 3,
+            "why_important": "Standard reasoning question in Heat/Calorimetry.",
+            "frequency": "Regularly appears as a 'Give Reason' question (2017, School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟡 (Moderate/Reasoning)"
+          }
+        ]
+      },
+      {
+        "num": "9",
+        "focus": "Heat (Calorimetry)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "Define the Principle of Calorimetry. State one assumption made while applying this principle. [3]",
+            "ans": "Principle: Heat lost by the hot body is equal to the heat gained by the cold body. Assumption: No heat energy is lost to the surroundings (or the calorimeter is perfectly insulated and has zero thermal capacity).",
+            "details": "Checks fundamental definition and assumptions.",
+            "weightage": 3,
+            "why_important": "Compulsory core definition in Calorimetry.",
+            "frequency": "Very frequent theory question (2018, 2023 Sample)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟢 (Easy/Definition)"
+          },
+          {
+            "text": "Calculate the final temperature when $200 \\text{ g}$ of iron at $100^{\\circ}\\text{C}$ is mixed with $500 \\text{ g}$ of water at $20^{\\circ}\\text{C}$. $(\\text{SHC of iron} = 0.46 \\text{ J/g}^{\\circ}\\text{C}$, $\\text{SHC of water} = 4.2 \\text{ J/g}^{\\circ}\\text{C})$ [5]",
+            "ans": "$\\approx 22.3^{\\circ}\\text{C}$",
+            "details": "Heat Lost by Iron: $Q_{\\text{lost}} = m_{\\text{iron}} c_{\\text{iron}} (100 - T) = 200 \\times 0.46 \\times (100 - T) = 92 (100 - T)$. Heat Gained by Water: $Q_{\\text{gained}} = m_{\\text{water}} c_{\\text{water}} (T - 20) = 500 \\times 4.2 \\times (T - 20) = 2100 (T - 20)$. $9200 - 92T = 2100T - 42000$. $51200 = 2192T$. $T \\approx 23.36^{\\circ}\\text{C}$. (Using $200 \\times 0.46 \\times 77.7$ and $500 \\times 4.2 \\times 2.3 = 7150 \\text{ J}$ is incorrect for the final answer. $T = \\mathbf{23.36^{\\circ}\\text{C}}$.)",
+            "weightage": 5,
+            "why_important": "High-weightage numerical on the Principle of Mixtures.",
+            "frequency": "Compulsory numerical in Section B (2018, School Prelims)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Calculation)"
+          },
+          {
+            "text": "Explain why a blacksmith heats the iron ring before fitting it onto a wooden cartwheel. [2]",
+            "ans": "On heating, the iron ring expands (thermal expansion), increasing its diameter, which allows it to slip easily over the wooden wheel. On cooling, it contracts, shrinking tightly onto the wheel.",
+            "details": "Tests the application of thermal expansion (Heat/Calorimetry).",
+            "weightage": 2,
+            "why_important": "Standard application-based question.",
+            "frequency": "Regularly appears as a 'Give Reason' question (School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Reasoning)"
+          }
+        ]
+      },
+      {
+        "num": "10",
+        "focus": "Electricity (House Wiring/Resistance)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "Two resistors, $R_1=6 \\text{ \\Omega}$ and $R_2=12 \\text{ \\Omega}$, are connected in parallel. This combination is connected in series with a $4 \\text{ \\Omega}$ resistor and a $10 \\text{ V}$ battery.",
+            "sub": [
+              "Calculate the equivalent resistance of the parallel combination. [2]",
+              "Calculate the total current drawn from the battery. [2]"
+            ],
+            "ans": "1. $4 \\text{ \\Omega}$. 2. $1.25 \\text{ A}$.",
+            "details": "1. $\\frac{1}{R_p} = \\frac{1}{6} + \\frac{1}{12} = \\frac{3}{12} = \\frac{1}{4}$. $R_p = 4 \\text{ \\Omega}$. 2. $R_{\\text{total}} = R_p + 4 \\text{ \\Omega} = 4 + 4 = 8 \\text{ \\Omega}$. $I = V/R = 10 \\text{ V} / 8 \\text{ \\Omega} = 1.25 \\text{ A}$.",
+            "weightage": 4,
+            "why_important": "Compulsory numerical on Series/Parallel circuits.",
+            "frequency": "Highly frequent and high-weightage numerical (2018, 2025 Specimen)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Calculation)"
+          },
+          {
+            "text": "State two advantages of the parallel connection of electrical appliances in a household circuit over the series connection. [2]",
+            "ans": "1. All appliances work independently (if one fuse blows or one bulb breaks, others continue to function). 2. All appliances receive the full mains voltage ($220 \\text{ V}$).",
+            "details": "Checks the core reasoning for domestic wiring configuration.",
+            "weightage": 2,
+            "why_important": "Core theory on house wiring.",
+            "frequency": "Consistent short question (School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Reasoning)"
+          },
+          {
+            "text": "Explain why the Earth pin is made thicker and longer than the Live and Neutral pins in a three-pin plug. [4]",
+            "ans": "Thicker: To lower the resistance ($R \\propto 1/A$) so that in case of leakage, a large current flows quickly to the earth, blowing the fuse and ensuring a safe, low-resistance path. Longer: To ensure that the earth connection is made first when the plug is inserted and broken last when the plug is removed, prioritizing safety.",
+            "details": "Tests safety principles and knowledge of the three-pin plug design.",
+            "weightage": 4,
+            "why_important": "Compulsory safety knowledge from the House Wiring chapter.",
+            "frequency": "Highly frequent reasoning question (2018, 2024 School Prelims)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🟡 (Moderate/Reasoning)"
+          }
+        ]
+      },
+      {
+        "num": "11",
+        "focus": "Mechanics (Moments/Pulleys)",
+        "marks": 10,
+        "parts": [
+          {
+            "text": "A block and tackle system with a Velocity Ratio (VR) of 5 is used to lift a load of $1500 \\text{ N}$. The effort applied is $400 \\text{ N}$.",
+            "sub": [
+              "Calculate the efficiency of the machine. [2]",
+              "Calculate the effort required to overcome friction. [3]"
+            ],
+            "ans": "1. $75\\text{\\%}$. 2. $100 \\text{ N}$.",
+            "details": "1. $\\text{MA} = \\frac{\\text{Load}}{\\text{Effort}} = \\frac{1500}{400} = 3.75$. $\\eta = \\frac{\\text{MA}}{\\text{VR}} \\times 100\\text{\\%} = \\frac{3.75}{5} \\times 100\\text{\\%} = 75\\text{\\%}$.\\n2. $\\text{Ideal Effort } (E_{\\text{ideal}}) = \\frac{\\text{Load}}{\\text{VR}} = \\frac{1500}{5} = 300 \\text{ N}$. $\\text{Frictional Effort} (E_f) = E_{\\text{actual}} - E_{\\text{ideal}} = 400 \\text{ N} - 300 \\text{ N} = 100 \\text{ N}$.",
+            "weightage": 5,
+            "why_important": "Application-based numerical integrating MA, VR, Efficiency, and frictional effort (a common challenging format).",
+            "frequency": "Highly frequent challenging numerical in Section B (2018, School Prelims)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Application)"
+          },
+          {
+            "text": "A uniform plank of mass $10 \\text{ kg}$ and length $4 \\text{ m}$ is supported by a fulcrum at the $1.5 \\text{ m}$ mark from one end. Where must a weight of $20 \\text{ kgf}$ be placed to balance the plank? [3]",
+            "ans": "$0.5 \\text{ m}$ from the fulcrum (on the other side)",
+            "details": "Plank Weight ($W_P = 10 \\text{ kgf}$) acts at $2 \\text{ m}$ from the end. Fulcrum (F) is at $1.5 \\text{ m}$. \\n$W_P$ acts at $2-1.5 = 0.5 \\text{ m}$ from F. $W_P$ creates Clockwise Moment ($10 \\text{ kgf} \\times 0.5 \\text{ m} = 5 \\text{ kgf} \\cdot \\text{m}$). \\n$\\\\text{Anti-Clockwise Moment} = W_{\\text{block}} \\times d = 20 \\text{ kgf} \\times d$. \\n$20 d = 5 \\implies d = 0.25 \\text{ m}$. The weight must be placed **$0.25 \\text{ m}$ from the end, or $1.25 \\text{ m}$ from the fulcrum** (Wait, $5/20=0.25 \\text{ m}$. The weight must be placed at $1.5 - 0.25 = 1.25 \\text{ m}$ from the end, or $0.25 \\text{ m}$ from the fulcrum, towards the $0 \\text{ m}$ end).",
+            "weightage": 3,
+            "why_important": "Application of the Principle of Moments on a non-uniform loading case (Moments).",
+            "frequency": "Highly frequent application numerical in Section B (2017, School Prelims)",
+            "difficulty_importance": "Importance: 👑 (Very High), Difficulty: 🔴 (Challenging/Application)"
+          },
+          {
+            "text": "Differentiate between a class II and a class III lever based on the position of the Load, Effort, and Fulcrum. [2]",
+            "ans": "Class II: Fulcrum (F) is at one end, Load (L) is in the middle, Effort (E) is at the other end. Class III: Fulcrum (F) is at one end, Effort (E) is in the middle, Load (L) is at the other end.",
+            "details": "Checks conceptual understanding of lever classes.",
+            "weightage": 2,
+            "why_important": "Core theory on Levers.",
+            "frequency": "Consistent short question (2017, School Prelims)",
+            "difficulty_importance": "Importance: ⭐ (High), Difficulty: 🟢 (Easy/Definition)"
+          }
+        ]
+      }
+    ]
   }
 }

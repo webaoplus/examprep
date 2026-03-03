@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-03T18:00:45.725Z",
+  "generatedAt": "2026-03-03T18:22:52.106Z",
   "subjects": {
     "physics": [
       {
@@ -11,10 +11,26 @@
         "questionCount": 11
       },
       {
+        "id": "paper10",
+        "file": "paper10.json",
+        "title": "ICSE Class X Physics Practice Paper 10",
+        "subtitle": "Comprehensive Review: Moments/Energy, Calorimetry/Phase Change, Lenses/Defects, Radioactivity, Power/Circuits",
+        "totalMarks": 80,
+        "questionCount": 11
+      },
+      {
         "id": "paper1",
         "file": "paper2.json",
         "title": "ICSE Class X Physics Practice Paper 1",
         "subtitle": "Mechanics (Moments/Work), Electricity (Circuits/Safety), Sound (Echo/Pitch), Light (Refraction/TIR)",
+        "totalMarks": 80,
+        "questionCount": 11
+      },
+      {
+        "id": "paper3",
+        "file": "paper3.json",
+        "title": "ICSE Class X Physics Practice Paper 3",
+        "subtitle": "Electricity (Circuits/Power), Sound (Echo/Resonance), Mechanics (Levers/W.E.P.), Light (Refraction/Prism)",
         "totalMarks": 80,
         "questionCount": 11
       }
